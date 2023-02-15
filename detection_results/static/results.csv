@@ -1,0 +1,1011 @@
+54,flawfinder,diff,mlpack,0.02355194091796875,https://github.com/mlpack/mlpack/commit/0fb85d2a072e0196e97d18210b6cbb171d91a113,distributed_table.h,fastlib/trunk/contrib/dongryel/thesis_research/core/table/distributed_table.h,CWE-833,1,full_match,"Number of rules (primarily dangerous function names) in C/C++ ruleset: 222\nExamining /media/nimashiri/DATA/vsprojects/ICSE23/vul_distributed_table.h\n\nFINAL RESULTS:\n\n/media/nimashiri/DATA/vsprojects/ICSE23/vul_distributed_table.h:25:  [4] (race) access:\n  This usually indicates a security flaw. If an attacker can change anything\n  along the path between the call to access() and the file's actual use\n  (e.g., by moving files), the attacker can exploit the race condition\n  (CWE-362/CWE-367!). Set up the correct permissions (e.g., using setuid())\n  and try to open the file directly.\n    friend class boost::serialization::access;\n\nANALYSIS SUMMARY:\n\nHits = 1\nLines analyzed = 399 in approximately 0.00 seconds (90086 lines/second)\nPhysical Source Lines of Code (SLOC) = 261\nHits@level = [0]   0 [1]   0 [2]   0 [3]   0 [4]   1 [5]   0\nHits@level+ = [0+]   1 [1+]   1 [2+]   1 [3+]   1 [4+]   1 [5+]   0\nHits/KSLOC@level+ = [0+] 3.83142 [1+] 3.83142 [2+] 3.83142 [3+] 3.83142 [4+] 3.83142 [5+]   0\nMinimum risk level = 1\n\nNot every hit is necessarily a security vulnerability.\nYou can inhibit a report by adding a comment in this form:\n// flawfinder: ignore\nMake *sure* it's a false positive!\nYou can use the option --neverignore to show these.\n\nThere may be other security vulnerabilities; review your code!\nSee 'Secure Programming HOWTO'\n(https://dwheeler.com/secure-programs) for more information."
+60,flawfinder,diff,mlpack,0.023380279541015625,https://github.com/mlpack/mlpack/commit/621fe6211e41fae13b355a1d799428bb684796b3,zhmm.cc,fastlib2/contrib/niche/new_hmm/zhmm.cc,CWE-401,1,full_match,/media/nimashiri/DATA/vsprojects/ICSE23/vul_zhmm.cc:71:  [3] (random) drand48:\n  This function is not sufficiently random for security-related functions\n  such as key and nonce creation (CWE-327). Use a more secure technique for\n  acquiring random values.\n    double num1 = drand48() / ((double)10);
+62,flawfinder,diff,mlpack,0.022930383682250977,https://github.com/mlpack/mlpack/commit/3372efff07b0602026bdfa2a7b2c8a21ab22cec1,compressed_matrix.h,fastlib2/contrib/dongryel/compression/compressed_matrix.h,CWE-190,1,full_match,"Number of rules (primarily dangerous function names) in C/C++ ruleset: 222\nExamining /media/nimashiri/DATA/vsprojects/ICSE23/vul_compressed_matrix.h\n\nFINAL RESULTS:\n\n/media/nimashiri/DATA/vsprojects/ICSE23/vul_compressed_matrix.h:124:  [2] (buffer) memcpy:\n  Does not check for buffer overflows when copying to destination (CWE-120).\n  Make sure destination can always hold the source data.\n    memcpy(ptr_, tmp_buffer, total_bytes_chewed);\n\nANALYSIS SUMMARY:\n\nHits = 1\nLines analyzed = 159 in approximately 0.00 seconds (42046 lines/second)\nPhysical Source Lines of Code (SLOC) = 89\nHits@level = [0]   0 [1]   0 [2]   1 [3]   0 [4]   0 [5]   0\nHits@level+ = [0+]   1 [1+]   1 [2+]   1 [3+]   0 [4+]   0 [5+]   0\nHits/KSLOC@level+ = [0+] 11.236 [1+] 11.236 [2+] 11.236 [3+]   0 [4+]   0 [5+]   0\nMinimum risk level = 1\n\nNot every hit is necessarily a security vulnerability.\nYou can inhibit a report by adding a comment in this form:\n// flawfinder: ignore\nMake *sure* it's a false positive!\nYou can use the option --neverignore to show these.\n\nThere may be other security vulnerabilities; review your code!\nSee 'Secure Programming HOWTO'\n(https://dwheeler.com/secure-programs) for more information."
+99,flawfinder,diff,mxnet,0.024545669555664062,https://github.com/apache/mxnet/commit/053ffc7f8f7eb085bfefb66749b5938f944844df,image-classification-predict.cc,example/image-classification/predict-cpp/image-classification-predict.cc,CWE-122,1,full_match,"/media/nimashiri/DATA/vsprojects/ICSE23/vul_image-classification-predict.cc:80:  [1] (buffer) read:\n  Check buffer boundaries if used in a loop including recursive loops\n  (CWE-120, CWE-20).\n    ifs.read(buffer_.get(), length_);\n\nANALYSIS SUMMARY:\n\nHits = 2\nLines analyzed = 334 in approximately 0.01 seconds (61967 lines/second)\nPhysical Source Lines of Code (SLOC) = 220\nHits@level = [0]   1 [1]   1 [2]   1 [3]   0 [4]   0 [5]   0\nHits@level+ = [0+]   3 [1+]   2 [2+]   1 [3+]   0 [4+]   0 [5+]   0\nHits/KSLOC@level+ = [0+] 13.6364 [1+] 9.09091 [2+] 4.54545 [3+]   0 [4+]   0 [5+]   0\nMinimum risk level = 1\n\nNot every hit is necessarily a security vulnerability.\nYou can inhibit a report by adding a comment in this form:\n// flawfinder: ignore\nMake *sure* it's a false positive!\nYou can use the option --neverignore to show these.\n\nThere may be other security vulnerabilities; review your code!\nSee 'Secure Programming HOWTO'\n(https://dwheeler.com/secure-programs) for more information."
+106,flawfinder,diff,mxnet,0.025829792022705078,https://github.com/apache/mxnet/commit/f9f74169bb05f85d85dec5991aa5fc9050dec9f6,image_iter_common.h,src/io/image_iter_common.h,CWE-190,1,full_match,"Number of rules (primarily dangerous function names) in C/C++ ruleset: 222\nExamining /media/nimashiri/DATA/vsprojects/ICSE23/vul_image_iter_common.h\n\nFINAL RESULTS:\n\n/media/nimashiri/DATA/vsprojects/ICSE23/vul_image_iter_common.h:60:  [2] (integer) atol:\n  Unless checked, the resulting number can exceed the expected range\n  (CWE-190). If source untrusted, check both minimum and maximum, even if the\n  input had no minus sign (large numbers can roll over into negative number;\n  consider saving to an unsigned value if that is intended).\n      image_index_.push_back(static_cast<size_t>(atol(p)));\n\nANALYSIS SUMMARY:\n\nHits = 1\nLines analyzed = 363 in approximately 0.01 seconds (54596 lines/second)\nPhysical Source Lines of Code (SLOC) = 248\nHits@level = [0]   0 [1]   0 [2]   1 [3]   0 [4]   0 [5]   0\nHits@level+ = [0+]   1 [1+]   1 [2+]   1 [3+]   0 [4+]   0 [5+]   0\nHits/KSLOC@level+ = [0+] 4.03226 [1+] 4.03226 [2+] 4.03226 [3+]   0 [4+]   0 [5+]   0\nMinimum risk level = 1\n\nNot every hit is necessarily a security vulnerability.\nYou can inhibit a report by adding a comment in this form:\n// flawfinder: ignore\nMake *sure* it's a false positive!\nYou can use the option --neverignore to show these.\n\nThere may be other security vulnerabilities; review your code!\nSee 'Secure Programming HOWTO'\n(https://dwheeler.com/secure-programs) for more information."
+114,flawfinder,diff,mxnet,0.030426979064941406,https://github.com/apache/mxnet/commit/fe07d504f97b822ec66be6295428a331268d1277,comm.h,src/kvstore/comm.h,segfault,6,full_match,"/media/nimashiri/DATA/vsprojects/ICSE23/vul_comm.h:677:  [4] (race) access:\n  This usually indicates a security flaw. If an attacker can change anything\n  along the path between the call to access() and the file's actual use\n  (e.g., by moving files), the attacker can exploit the race condition\n  (CWE-362/CWE-367!). Set up the correct permissions (e.g., using setuid())\n  and try to open the file directly.\n        int access;"
+114,flawfinder,diff,mxnet,0.030426979064941406,https://github.com/apache/mxnet/commit/fe07d504f97b822ec66be6295428a331268d1277,comm.h,src/kvstore/comm.h,segfault,6,full_match,"/media/nimashiri/DATA/vsprojects/ICSE23/vul_comm.h:678:  [4] (race) access:\n  This usually indicates a security flaw. If an attacker can change anything\n  along the path between the call to access() and the file's actual use\n  (e.g., by moving files), the attacker can exploit the race condition\n  (CWE-362/CWE-367!). Set up the correct permissions (e.g., using setuid())\n  and try to open the file directly.\n        cudaDeviceCanAccessPeer(&access, gpus[i], gpus[j]);"
+114,flawfinder,diff,mxnet,0.030426979064941406,https://github.com/apache/mxnet/commit/fe07d504f97b822ec66be6295428a331268d1277,comm.h,src/kvstore/comm.h,segfault,6,full_match,"/media/nimashiri/DATA/vsprojects/ICSE23/vul_comm.h:679:  [4] (race) access:\n  This usually indicates a security flaw. If an attacker can change anything\n  along the path between the call to access() and the file's actual use\n  (e.g., by moving files), the attacker can exploit the race condition\n  (CWE-362/CWE-367!). Set up the correct permissions (e.g., using setuid())\n  and try to open the file directly.\n        if (access) {"
+114,flawfinder,diff,mxnet,0.030426979064941406,https://github.com/apache/mxnet/commit/fe07d504f97b822ec66be6295428a331268d1277,comm.h,src/kvstore/comm.h,segfault,6,full_match,"/media/nimashiri/DATA/vsprojects/ICSE23/vul_comm.h:694:  [4] (race) access:\n  This usually indicates a security flaw. If an attacker can change anything\n  along the path between the call to access() and the file's actual use\n  (e.g., by moving files), the attacker can exploit the race condition\n  (CWE-362/CWE-367!). Set up the correct permissions (e.g., using setuid())\n  and try to open the file directly.\n      std::string access(n, '.');"
+114,flawfinder,diff,mxnet,0.030426979064941406,https://github.com/apache/mxnet/commit/fe07d504f97b822ec66be6295428a331268d1277,comm.h,src/kvstore/comm.h,segfault,6,full_match,"/media/nimashiri/DATA/vsprojects/ICSE23/vul_comm.h:697:  [4] (race) access:\n  This usually indicates a security flaw. If an attacker can change anything\n  along the path between the call to access() and the file's actual use\n  (e.g., by moving files), the attacker can exploit the race condition\n  (CWE-362/CWE-367!). Set up the correct permissions (e.g., using setuid())\n  and try to open the file directly.\n          access[j] = p2p[i*n+j] ? 'v' : '.';"
+114,flawfinder,diff,mxnet,0.030426979064941406,https://github.com/apache/mxnet/commit/fe07d504f97b822ec66be6295428a331268d1277,comm.h,src/kvstore/comm.h,segfault,6,full_match,"/media/nimashiri/DATA/vsprojects/ICSE23/vul_comm.h:699:  [4] (race) access:\n  This usually indicates a security flaw. If an attacker can change anything\n  along the path between the call to access() and the file's actual use\n  (e.g., by moving files), the attacker can exploit the race condition\n  (CWE-362/CWE-367!). Set up the correct permissions (e.g., using setuid())\n  and try to open the file directly.\n        LOG(WARNING) << access;\n\nANALYSIS SUMMARY:\n\nHits = 6\nLines analyzed = 782 in approximately 0.01 seconds (75263 lines/second)\nPhysical Source Lines of Code (SLOC) = 604\nHits@level = [0]   0 [1]   0 [2]   0 [3]   0 [4]   6 [5]   0\nHits@level+ = [0+]   6 [1+]   6 [2+]   6 [3+]   6 [4+]   6 [5+]   0\nHits/KSLOC@level+ = [0+] 9.93377 [1+] 9.93377 [2+] 9.93377 [3+] 9.93377 [4+] 9.93377 [5+]   0\nMinimum risk level = 1\n\nNot every hit is necessarily a security vulnerability.\nYou can inhibit a report by adding a comment in this form:\n// flawfinder: ignore\nMake *sure* it's a false positive!\nYou can use the option --neverignore to show these.\n\nThere may be other security vulnerabilities; review your code!\nSee 'Secure Programming HOWTO'\n(https://dwheeler.com/secure-programs) for more information."
+123,flawfinder,diff,mxnet,0.040409088134765625,https://github.com/apache/mxnet/commit/f9c2689ec2ffd61ce123dce5857f8a797f21e4df,ndarray.cc,src/ndarray/ndarray.cc,CWE-362,2,full_match,"/media/nimashiri/DATA/vsprojects/ICSE23/vul_ndarray.cc:377:  [2] (buffer) memcpy:\n  Does not check for buffer overflows when copying to destination (CWE-120).\n  Make sure destination can always hold the source data.\n  memcpy(shandle.dptr, def_mem->get_data_handle(), def_pd.get_size());"
+123,flawfinder,diff,mxnet,0.040409088134765625,https://github.com/apache/mxnet/commit/f9c2689ec2ffd61ce123dce5857f8a797f21e4df,ndarray.cc,src/ndarray/ndarray.cc,CWE-362,2,full_match,"/media/nimashiri/DATA/vsprojects/ICSE23/vul_ndarray.cc:572:  [2] (buffer) memcpy:\n  Does not check for buffer overflows when copying to destination (CWE-120).\n  Make sure destination can always hold the source data.\n  memcpy(ptr_->shandle.dptr, new_mem->get_data_handle(), pd.get_size());"
+172,flawfinder,diff,pytorch,0.029105186462402344,https://github.com/pytorch/pytorch/commit/74828be4a7d0d2dba3f0ec3f6e79265cdfae5329,THTensor.cpp,aten/src/TH/generic/THTensor.cpp,CWE-190,1,full_match,"/media/nimashiri/DATA/vsprojects/ICSE23/vul_THTensor.cpp:804:  [2] (buffer) memcpy:\n  Does not check for buffer overflows when copying to destination (CWE-120).\n  Make sure destination can always hold the source data.\n            memcpy(result_data + offset, input0_data + o*local_inner, local_inner*sizeof(scalar_t));\n\nANALYSIS SUMMARY:\n\nHits = 2\nLines analyzed = 855 in approximately 0.01 seconds (89642 lines/second)\nPhysical Source Lines of Code (SLOC) = 704\nHits@level = [0]   3 [1]   0 [2]   1 [3]   0 [4]   1 [5]   0\nHits@level+ = [0+]   5 [1+]   2 [2+]   2 [3+]   1 [4+]   1 [5+]   0\nHits/KSLOC@level+ = [0+] 7.10227 [1+] 2.84091 [2+] 2.84091 [3+] 1.42045 [4+] 1.42045 [5+]   0\nMinimum risk level = 1\n\nNot every hit is necessarily a security vulnerability.\nYou can inhibit a report by adding a comment in this form:\n// flawfinder: ignore\nMake *sure* it's a false positive!\nYou can use the option --neverignore to show these.\n\nThere may be other security vulnerabilities; review your code!\nSee 'Secure Programming HOWTO'\n(https://dwheeler.com/secure-programs) for more information."
+197,flawfinder,diff,pytorch,0.024240970611572266,https://github.com/pytorch/pytorch/commit/96007ec6c00b5248d47eae8ce781481e1e32ab70,simd.h,aten/src/TH/generic/simd/simd.h,CWE-125,4,full_match,"/media/nimashiri/DATA/vsprojects/ICSE23/vul_simd.h:84:  [3] (buffer) getenv:\n  Environment variables are untrustable input if they can be set by an\n  attacker. They can have any content and length, and the same variable can\n  be set more than once (CWE-807, CWE-20). Check environment variables\n  carefully before using them.\n  evar = getenv(""TH_NO_VSX"");"
+197,flawfinder,diff,pytorch,0.024240970611572266,https://github.com/pytorch/pytorch/commit/96007ec6c00b5248d47eae8ce781481e1e32ab70,simd.h,aten/src/TH/generic/simd/simd.h,CWE-125,4,full_match,"/media/nimashiri/DATA/vsprojects/ICSE23/vul_simd.h:130:  [3] (buffer) getenv:\n  Environment variables are untrustable input if they can be set by an\n  attacker. They can have any content and length, and the same variable can\n  be set more than once (CWE-807, CWE-20). Check environment variables\n  carefully before using them.\n  evar = getenv(""TH_NO_AVX2"");"
+197,flawfinder,diff,pytorch,0.024240970611572266,https://github.com/pytorch/pytorch/commit/96007ec6c00b5248d47eae8ce781481e1e32ab70,simd.h,aten/src/TH/generic/simd/simd.h,CWE-125,4,full_match,"/media/nimashiri/DATA/vsprojects/ICSE23/vul_simd.h:146:  [3] (buffer) getenv:\n  Environment variables are untrustable input if they can be set by an\n  attacker. They can have any content and length, and the same variable can\n  be set more than once (CWE-807, CWE-20). Check environment variables\n  carefully before using them.\n  evar = getenv(""TH_NO_AVX"");"
+197,flawfinder,diff,pytorch,0.024240970611572266,https://github.com/pytorch/pytorch/commit/96007ec6c00b5248d47eae8ce781481e1e32ab70,simd.h,aten/src/TH/generic/simd/simd.h,CWE-125,4,full_match,"/media/nimashiri/DATA/vsprojects/ICSE23/vul_simd.h:153:  [3] (buffer) getenv:\n  Environment variables are untrustable input if they can be set by an\n  attacker. They can have any content and length, and the same variable can\n  be set more than once (CWE-807, CWE-20). Check environment variables\n  carefully before using them.\n  evar = getenv(""TH_NO_SSE"");\n\nANALYSIS SUMMARY:\n\nHits = 4\nLines analyzed = 166 in approximately 0.00 seconds (43600 lines/second)\nPhysical Source Lines of Code (SLOC) = 129\nHits@level = [0]   0 [1]   0 [2]   0 [3]   4 [4]   0 [5]   0\nHits@level+ = [0+]   4 [1+]   4 [2+]   4 [3+]   4 [4+]   0 [5+]   0\nHits/KSLOC@level+ = [0+] 31.0078 [1+] 31.0078 [2+] 31.0078 [3+] 31.0078 [4+]   0 [5+]   0\nMinimum risk level = 1\n\nNot every hit is necessarily a security vulnerability.\nYou can inhibit a report by adding a comment in this form:\n// flawfinder: ignore\nMake *sure* it's a false positive!\nYou can use the option --neverignore to show these.\n\nThere may be other security vulnerabilities; review your code!\nSee 'Secure Programming HOWTO'\n(https://dwheeler.com/secure-programs) for more information."
+210,flawfinder,diff,tensorflow,0.023818492889404297,https://github.com/tensorflow/tensorflow/commit/698e01511f62a3c185754db78ebce0eee1f0184d,decode_padded_raw_op.cc,tensorflow/core/kernels/decode_padded_raw_op.cc,CWE-197,2,full_match,"/media/nimashiri/DATA/vsprojects/ICSE23/vul_decode_padded_raw_op.cc:89:  [2] (buffer) memcpy:\n  Does not check for buffer overflows when copying to destination (CWE-120).\n  Make sure destination can always hold the source data.\n          memcpy(out_data, in_data, fixed_length);"
+210,flawfinder,diff,tensorflow,0.023818492889404297,https://github.com/tensorflow/tensorflow/commit/698e01511f62a3c185754db78ebce0eee1f0184d,decode_padded_raw_op.cc,tensorflow/core/kernels/decode_padded_raw_op.cc,CWE-197,2,full_match,"/media/nimashiri/DATA/vsprojects/ICSE23/vul_decode_padded_raw_op.cc:91:  [2] (buffer) memcpy:\n  Does not check for buffer overflows when copying to destination (CWE-120).\n  Make sure destination can always hold the source data.\n          memcpy(out_data, in_data, flat_in(i).size());\n\nANALYSIS SUMMARY:\n\nHits = 2\nLines analyzed = 140 in approximately 0.00 seconds (36373 lines/second)\nPhysical Source Lines of Code (SLOC) = 92\nHits@level = [0]   0 [1]   0 [2]   2 [3]   0 [4]   0 [5]   0\nHits@level+ = [0+]   2 [1+]   2 [2+]   2 [3+]   0 [4+]   0 [5+]   0\nHits/KSLOC@level+ = [0+] 21.7391 [1+] 21.7391 [2+] 21.7391 [3+]   0 [4+]   0 [5+]   0\nMinimum risk level = 1\n\nNot every hit is necessarily a security vulnerability.\nYou can inhibit a report by adding a comment in this form:\n// flawfinder: ignore\nMake *sure* it's a false positive!\nYou can use the option --neverignore to show these.\n\nThere may be other security vulnerabilities; review your code!\nSee 'Secure Programming HOWTO'\n(https://dwheeler.com/secure-programs) for more information."
+229,flawfinder,diff,tensorflow,0.05585074424743652,https://github.com/tensorflow/tensorflow/commit/f60e73456ed6c0e121a9d2b308f9c9f8f9a3cdb7,hlo_instruction.cc,tensorflow/compiler/xla/service/hlo_instruction.cc,CWE-122,6,full_match,/media/nimashiri/DATA/vsprojects/ICSE23/vul_hlo_instruction.cc:3814:  [4] (buffer) StrCat:\n  Does not check for buffer overflows when concatenating to destination\n  [MS-banned] (CWE-120).\n    lhs_dims[dnums.input_spatial_dimensions(i)] = StrCat(i);
+229,flawfinder,diff,tensorflow,0.05585074424743652,https://github.com/tensorflow/tensorflow/commit/f60e73456ed6c0e121a9d2b308f9c9f8f9a3cdb7,hlo_instruction.cc,tensorflow/compiler/xla/service/hlo_instruction.cc,CWE-122,6,full_match,/media/nimashiri/DATA/vsprojects/ICSE23/vul_hlo_instruction.cc:3821:  [4] (buffer) StrCat:\n  Does not check for buffer overflows when concatenating to destination\n  [MS-banned] (CWE-120).\n    rhs_dims[dnums.kernel_spatial_dimensions(i)] = StrCat(i);
+229,flawfinder,diff,tensorflow,0.05585074424743652,https://github.com/tensorflow/tensorflow/commit/f60e73456ed6c0e121a9d2b308f9c9f8f9a3cdb7,hlo_instruction.cc,tensorflow/compiler/xla/service/hlo_instruction.cc,CWE-122,6,full_match,/media/nimashiri/DATA/vsprojects/ICSE23/vul_hlo_instruction.cc:3828:  [4] (buffer) StrCat:\n  Does not check for buffer overflows when concatenating to destination\n  [MS-banned] (CWE-120).\n    output_dims[dnums.output_spatial_dimensions(i)] = StrCat(i);
+229,flawfinder,diff,tensorflow,0.05585074424743652,https://github.com/tensorflow/tensorflow/commit/f60e73456ed6c0e121a9d2b308f9c9f8f9a3cdb7,hlo_instruction.cc,tensorflow/compiler/xla/service/hlo_instruction.cc,CWE-122,6,full_match,"/media/nimashiri/DATA/vsprojects/ICSE23/vul_hlo_instruction.cc:3831:  [4] (buffer) StrCat:\n  Does not check for buffer overflows when concatenating to destination\n  [MS-banned] (CWE-120).\n  return StrCat(StrJoin(lhs_dims, """"), ""_"", StrJoin(rhs_dims, """"), ""->"","
+229,flawfinder,diff,tensorflow,0.05585074424743652,https://github.com/tensorflow/tensorflow/commit/f60e73456ed6c0e121a9d2b308f9c9f8f9a3cdb7,hlo_instruction.cc,tensorflow/compiler/xla/service/hlo_instruction.cc,CWE-122,6,full_match,"/media/nimashiri/DATA/vsprojects/ICSE23/vul_hlo_instruction.cc:3840:  [4] (buffer) StrCat:\n  Does not check for buffer overflows when concatenating to destination\n  [MS-banned] (CWE-120).\n        StrCat(""{"", StrJoin(group.replica_ids(), "",""), ""}""));"
+229,flawfinder,diff,tensorflow,0.05585074424743652,https://github.com/tensorflow/tensorflow/commit/f60e73456ed6c0e121a9d2b308f9c9f8f9a3cdb7,hlo_instruction.cc,tensorflow/compiler/xla/service/hlo_instruction.cc,CWE-122,6,full_match,"/media/nimashiri/DATA/vsprojects/ICSE23/vul_hlo_instruction.cc:3842:  [4] (buffer) StrCat:\n  Does not check for buffer overflows when concatenating to destination\n  [MS-banned] (CWE-120).\n  return StrCat(""{"", StrJoin(replica_group_str, "",""), ""}"");\n\nANALYSIS SUMMARY:\n\nHits = 34\nLines analyzed = 4405 in approximately 0.04 seconds (123907 lines/second)\nPhysical Source Lines of Code (SLOC) = 3814\nHits@level = [0]   0 [1]   0 [2]   0 [3]   0 [4]  34 [5]   0\nHits@level+ = [0+]  34 [1+]  34 [2+]  34 [3+]  34 [4+]  34 [5+]   0\nHits/KSLOC@level+ = [0+] 8.91453 [1+] 8.91453 [2+] 8.91453 [3+] 8.91453 [4+] 8.91453 [5+]   0\nMinimum risk level = 1\n\nNot every hit is necessarily a security vulnerability.\nYou can inhibit a report by adding a comment in this form:\n// flawfinder: ignore\nMake *sure* it's a false positive!\nYou can use the option --neverignore to show these.\n\nThere may be other security vulnerabilities; review your code!\nSee 'Secure Programming HOWTO'\n(https://dwheeler.com/secure-programs) for more information."
+229,flawfinder,diff,tensorflow,0.06301116943359375,https://github.com/tensorflow/tensorflow/commit/f60e73456ed6c0e121a9d2b308f9c9f8f9a3cdb7,hlo_parser.cc,tensorflow/compiler/xla/service/hlo_parser.cc,CWE-122,3,full_match,"/media/nimashiri/DATA/vsprojects/ICSE23/vul_hlo_parser.cc:4198:  [4] (buffer) StrCat:\n  Does not check for buffer overflows when concatenating to destination\n  [MS-banned] (CWE-120).\n          StrCat(""expects unique lhs dimension numbers, but sees "", lhs));"
+229,flawfinder,diff,tensorflow,0.06301116943359375,https://github.com/tensorflow/tensorflow/commit/f60e73456ed6c0e121a9d2b308f9c9f8f9a3cdb7,hlo_parser.cc,tensorflow/compiler/xla/service/hlo_parser.cc,CWE-122,3,full_match,"/media/nimashiri/DATA/vsprojects/ICSE23/vul_hlo_parser.cc:4221:  [4] (buffer) StrCat:\n  Does not check for buffer overflows when concatenating to destination\n  [MS-banned] (CWE-120).\n          StrCat(""expects unique rhs dimension numbers, but sees "", rhs));"
+229,flawfinder,diff,tensorflow,0.06301116943359375,https://github.com/tensorflow/tensorflow/commit/f60e73456ed6c0e121a9d2b308f9c9f8f9a3cdb7,hlo_parser.cc,tensorflow/compiler/xla/service/hlo_parser.cc,CWE-122,3,full_match,"/media/nimashiri/DATA/vsprojects/ICSE23/vul_hlo_parser.cc:4244:  [4] (buffer) StrCat:\n  Does not check for buffer overflows when concatenating to destination\n  [MS-banned] (CWE-120).\n          StrCat(""expects unique output dimension numbers, but sees "", out));"
+236,flawfinder,diff,tensorflow,0.03968381881713867,https://github.com/tensorflow/tensorflow/commit/aa44812e3e40b1c95586466bc177b07525b787ea,function.cc,tensorflow/core/framework/function.cc,CWE-908,2,full_match,"/media/nimashiri/DATA/vsprojects/ICSE23/vul_function.cc:1913:  [4] (buffer) StrCat:\n  Does not check for buffer overflows when concatenating to destination\n  [MS-banned] (CWE-120).\n      n->add_input(strings::StrCat(""^"", d));"
+236,flawfinder,diff,tensorflow,0.03968381881713867,https://github.com/tensorflow/tensorflow/commit/aa44812e3e40b1c95586466bc177b07525b787ea,function.cc,tensorflow/core/framework/function.cc,CWE-908,2,full_match,"/media/nimashiri/DATA/vsprojects/ICSE23/vul_function.cc:1928:  [4] (buffer) StrCat:\n  Does not check for buffer overflows when concatenating to destination\n  [MS-banned] (CWE-120).\n            strings::StrCat(src.ret[0], "":"", o.first, "":"", i - o.second.first);\n\nANALYSIS SUMMARY:\n\nHits = 21\nLines analyzed = 1978 in approximately 0.02 seconds (106065 lines/second)\nPhysical Source Lines of Code (SLOC) = 1645\nHits@level = [0]   0 [1]   0 [2]   0 [3]   0 [4]  21 [5]   0\nHits@level+ = [0+]  21 [1+]  21 [2+]  21 [3+]  21 [4+]  21 [5+]   0\nHits/KSLOC@level+ = [0+] 12.766 [1+] 12.766 [2+] 12.766 [3+] 12.766 [4+] 12.766 [5+]   0\nMinimum risk level = 1\n\nNot every hit is necessarily a security vulnerability.\nYou can inhibit a report by adding a comment in this form:\n// flawfinder: ignore\nMake *sure* it's a false positive!\nYou can use the option --neverignore to show these.\n\nThere may be other security vulnerabilities; review your code!\nSee 'Secure Programming HOWTO'\n(https://dwheeler.com/secure-programs) for more information."
+245,flawfinder,diff,tensorflow,0.027916669845581055,https://github.com/tensorflow/tensorflow/commit/e07e1c3d26492c06f078c7e5bf2d138043e199c1,attr_value_util.cc,tensorflow/core/framework/attr_value_util.cc,CWE-121,4,full_match,/media/nimashiri/DATA/vsprojects/ICSE23/vul_attr_value_util.cc:234:  [4] (buffer) StrCat:\n  Does not check for buffer overflows when concatenating to destination\n  [MS-banned] (CWE-120).\n      return strings::StrCat(attr_value.i());
+245,flawfinder,diff,tensorflow,0.027916669845581055,https://github.com/tensorflow/tensorflow/commit/e07e1c3d26492c06f078c7e5bf2d138043e199c1,attr_value_util.cc,tensorflow/core/framework/attr_value_util.cc,CWE-121,4,full_match,/media/nimashiri/DATA/vsprojects/ICSE23/vul_attr_value_util.cc:236:  [4] (buffer) StrCat:\n  Does not check for buffer overflows when concatenating to destination\n  [MS-banned] (CWE-120).\n      return strings::StrCat(attr_value.f());
+245,flawfinder,diff,tensorflow,0.027916669845581055,https://github.com/tensorflow/tensorflow/commit/e07e1c3d26492c06f078c7e5bf2d138043e199c1,attr_value_util.cc,tensorflow/core/framework/attr_value_util.cc,CWE-121,4,full_match,/media/nimashiri/DATA/vsprojects/ICSE23/vul_attr_value_util.cc:253:  [4] (buffer) StrCat:\n  Does not check for buffer overflows when concatenating to destination\n  [MS-banned] (CWE-120).\n          pieces.push_back(strings::StrCat(attr_value.list().i(i)));
+245,flawfinder,diff,tensorflow,0.027916669845581055,https://github.com/tensorflow/tensorflow/commit/e07e1c3d26492c06f078c7e5bf2d138043e199c1,attr_value_util.cc,tensorflow/core/framework/attr_value_util.cc,CWE-121,4,full_match,/media/nimashiri/DATA/vsprojects/ICSE23/vul_attr_value_util.cc:257:  [4] (buffer) StrCat:\n  Does not check for buffer overflows when concatenating to destination\n  [MS-banned] (CWE-120).\n          pieces.push_back(strings::StrCat(attr_value.list().f(i)));
+277,flawfinder,diff,tensorflow,0.02934098243713379,https://github.com/tensorflow/tensorflow/commit/ca8c013b5e97b1373b3bb1c97ea655e69f31a575,parameterized_truncated_normal_op.cc,tensorflow/core/kernels/parameterized_truncated_normal_op.cc,CWE-190,2,full_match,/media/nimashiri/DATA/vsprojects/ICSE23/vul_parameterized_truncated_normal_op.cc:78:  [3] (random) random:\n  This function is not sufficiently random for security-related functions\n  such as key and nonce creation (CWE-327). Use a more secure technique for\n  acquiring random values.\n      random::PhiloxRandom gen_copy = gen;
+277,flawfinder,diff,tensorflow,0.02934098243713379,https://github.com/tensorflow/tensorflow/commit/ca8c013b5e97b1373b3bb1c97ea655e69f31a575,parameterized_truncated_normal_op.cc,tensorflow/core/kernels/parameterized_truncated_normal_op.cc,CWE-190,2,full_match,/media/nimashiri/DATA/vsprojects/ICSE23/vul_parameterized_truncated_normal_op.cc:341:  [3] (random) random:\n  This function is not sufficiently random for security-related functions\n  such as key and nonce creation (CWE-327). Use a more secure technique for\n  acquiring random values.\n      random::PhiloxRandom gen_copy = gen;
+277,flawfinder,diff,tensorflow,0.02424311637878418,https://github.com/tensorflow/tensorflow/commit/ca8c013b5e97b1373b3bb1c97ea655e69f31a575,random_poisson_op.cc,tensorflow/core/kernels/random_poisson_op.cc,CWE-190,1,full_match,"/media/nimashiri/DATA/vsprojects/ICSE23/vul_random_poisson_op.cc:97:  [3] (random) random:\n  This function is not sufficiently random for security-related functions\n  such as key and nonce creation (CWE-327). Use a more secure technique for\n  acquiring random values.\n    typedef random::UniformDistribution<random::PhiloxRandom, CT> Uniform;","/media/nimashiri/DATA/vsprojects/ICSE23/vul_random_poisson_op.cc:97:  [3] (random) random:\n  This function is not sufficiently random for security-related functions\n  such as key and nonce creation (CWE-327). Use a more secure technique for\n  acquiring random values.\n    typedef random::UniformDistribution<random::PhiloxRandom, CT> Uniform;"
+277,flawfinder,diff,tensorflow,0.02655315399169922,https://github.com/tensorflow/tensorflow/commit/ca8c013b5e97b1373b3bb1c97ea655e69f31a575,stateless_random_ops.cc,tensorflow/core/kernels/stateless_random_ops.cc,CWE-190,1,full_match,"/media/nimashiri/DATA/vsprojects/ICSE23/vul_stateless_random_ops.cc:254:  [3] (random) random:\n  This function is not sufficiently random for security-related functions\n  such as key and nonce creation (CWE-327). Use a more secure technique for\n  acquiring random values.\n    auto DoWork = [samples_per_alpha, num_alphas, &random, samples_flat,"
+294,flawfinder,diff,tensorflow,0.024629831314086914,https://github.com/tensorflow/tensorflow/commit/25b0e7d995050c85a56d787a6aac4e1a7423902e,cpu_device.cc,tensorflow/compiler/xla/pjrt/cpu_device.cc,CWE-121,1,full_match,Number of rules (primarily dangerous function names) in C/C++ ruleset: 222\nExamining /media/nimashiri/DATA/vsprojects/ICSE23/vul_cpu_device.cc\n\nFINAL RESULTS:\n\n/media/nimashiri/DATA/vsprojects/ICSE23/vul_cpu_device.cc:47:  [4] (buffer) StrCat:\n  Does not check for buffer overflows when concatenating to destination\n  [MS-banned] (CWE-120).\n        absl::StrCat(2048 * 1024);\n\nANALYSIS SUMMARY:\n\nHits = 1\nLines analyzed = 64 in approximately 0.00 seconds (16229 lines/second)\nPhysical Source Lines of Code (SLOC) = 40\nHits@level = [0]   0 [1]   0 [2]   0 [3]   0 [4]   1 [5]   0\nHits@level+ = [0+]   1 [1+]   1 [2+]   1 [3+]   1 [4+]   1 [5+]   0\nHits/KSLOC@level+ = [0+]  25 [1+]  25 [2+]  25 [3+]  25 [4+]  25 [5+]   0\nMinimum risk level = 1\n\nNot every hit is necessarily a security vulnerability.\nYou can inhibit a report by adding a comment in this form:\n// flawfinder: ignore\nMake *sure* it's a false positive!\nYou can use the option --neverignore to show these.\n\nThere may be other security vulnerabilities; review your code!\nSee 'Secure Programming HOWTO'\n(https://dwheeler.com/secure-programs) for more information.
+313,flawfinder,diff,tensorflow,0.024802207946777344,https://github.com/tensorflow/tensorflow/commit/e2f6723772345d6b83fac92cf5737f19a68dfca6,Lexer.cpp,third_party/mlir/lib/Parser/Lexer.cpp,CWE-121,1,full_match,"Number of rules (primarily dangerous function names) in C/C++ ruleset: 222\nExamining /media/nimashiri/DATA/vsprojects/ICSE23/vul_Lexer.cpp\n\nFINAL RESULTS:\n\n/media/nimashiri/DATA/vsprojects/ICSE23/vul_Lexer.cpp:128:  [1] (buffer) equal:\n  Function does not check the second iterator for over-read conditions\n  (CWE-126). This function is often discouraged by most C++ coding standards\n  in favor of its safer alternatives provided since C++14. Consider using a\n  form of this function that checks the second iterator before potentially\n  overflowing it.\n    return formToken(Token::equal, tokStart);\n\nANALYSIS SUMMARY:\n\nHits = 1\nLines analyzed = 411 in approximately 0.01 seconds (79098 lines/second)\nPhysical Source Lines of Code (SLOC) = 273\nHits@level = [0]   0 [1]   1 [2]   0 [3]   0 [4]   0 [5]   0\nHits@level+ = [0+]   1 [1+]   1 [2+]   0 [3+]   0 [4+]   0 [5+]   0\nHits/KSLOC@level+ = [0+] 3.663 [1+] 3.663 [2+]   0 [3+]   0 [4+]   0 [5+]   0\nMinimum risk level = 1\n\nNot every hit is necessarily a security vulnerability.\nYou can inhibit a report by adding a comment in this form:\n// flawfinder: ignore\nMake *sure* it's a false positive!\nYou can use the option --neverignore to show these.\n\nThere may be other security vulnerabilities; review your code!\nSee 'Secure Programming HOWTO'\n(https://dwheeler.com/secure-programs) for more information."
+321,flawfinder,diff,tensorflow,0.03914928436279297,https://github.com/tensorflow/tensorflow/commit/2b8485c1b79d8cc4534096758ec28dab80d5d828,extract_outside_compilation_pass.cc,tensorflow/compiler/jit/extract_outside_compilation_pass.cc,CWE-833,8,full_match,"/media/nimashiri/DATA/vsprojects/ICSE23/vul_extract_outside_compilation_pass.cc:47:  [4] (buffer) StrCat:\n  Does not check for buffer overflows when concatenating to destination\n  [MS-banned] (CWE-120).\n  NodeDefBuilder builder(absl::StrCat(xla_cluster_name, ""_key_placeholder""),"
+321,flawfinder,diff,tensorflow,0.03914928436279297,https://github.com/tensorflow/tensorflow/commit/2b8485c1b79d8cc4534096758ec28dab80d5d828,extract_outside_compilation_pass.cc,tensorflow/compiler/jit/extract_outside_compilation_pass.cc,CWE-833,8,full_match,"/media/nimashiri/DATA/vsprojects/ICSE23/vul_extract_outside_compilation_pass.cc:1143:  [4] (buffer) StrCat:\n  Does not check for buffer overflows when concatenating to destination\n  [MS-banned] (CWE-120).\n      absl::StrCat(""recv_oc_if_pred_"", if_node_name), ""_XlaRecvAtHost"");"
+321,flawfinder,diff,tensorflow,0.03914928436279297,https://github.com/tensorflow/tensorflow/commit/2b8485c1b79d8cc4534096758ec28dab80d5d828,extract_outside_compilation_pass.cc,tensorflow/compiler/jit/extract_outside_compilation_pass.cc,CWE-833,8,full_match,"/media/nimashiri/DATA/vsprojects/ICSE23/vul_extract_outside_compilation_pass.cc:1316:  [4] (buffer) StrCat:\n  Does not check for buffer overflows when concatenating to destination\n  [MS-banned] (CWE-120).\n      absl::StrCat(""recv_oc_while_cond_ret_"", while_node_name), ""_Retval"");"
+321,flawfinder,diff,tensorflow,0.03914928436279297,https://github.com/tensorflow/tensorflow/commit/2b8485c1b79d8cc4534096758ec28dab80d5d828,extract_outside_compilation_pass.cc,tensorflow/compiler/jit/extract_outside_compilation_pass.cc,CWE-833,8,full_match,"/media/nimashiri/DATA/vsprojects/ICSE23/vul_extract_outside_compilation_pass.cc:1404:  [4] (buffer) StrCat:\n  Does not check for buffer overflows when concatenating to destination\n  [MS-banned] (CWE-120).\n  string outside_compilation_name = absl::StrCat(""oc_while_"", while_node_name);"
+321,flawfinder,diff,tensorflow,0.03914928436279297,https://github.com/tensorflow/tensorflow/commit/2b8485c1b79d8cc4534096758ec28dab80d5d828,extract_outside_compilation_pass.cc,tensorflow/compiler/jit/extract_outside_compilation_pass.cc,CWE-833,8,full_match,"/media/nimashiri/DATA/vsprojects/ICSE23/vul_extract_outside_compilation_pass.cc:1484:  [4] (buffer) StrCat:\n  Does not check for buffer overflows when concatenating to destination\n  [MS-banned] (CWE-120).\n  NodeDefBuilder call_builder(absl::StrCat(""oc_call_"", func_call_node_name),"
+321,flawfinder,diff,tensorflow,0.03914928436279297,https://github.com/tensorflow/tensorflow/commit/2b8485c1b79d8cc4534096758ec28dab80d5d828,extract_outside_compilation_pass.cc,tensorflow/compiler/jit/extract_outside_compilation_pass.cc,CWE-833,8,full_match,"/media/nimashiri/DATA/vsprojects/ICSE23/vul_extract_outside_compilation_pass.cc:1599:  [4] (buffer) StrCat:\n  Does not check for buffer overflows when concatenating to destination\n  [MS-banned] (CWE-120).\n               absl::StrCat(""oc_else_branch_host_if_"", n->name());"
+321,flawfinder,diff,tensorflow,0.03914928436279297,https://github.com/tensorflow/tensorflow/commit/2b8485c1b79d8cc4534096758ec28dab80d5d828,extract_outside_compilation_pass.cc,tensorflow/compiler/jit/extract_outside_compilation_pass.cc,CWE-833,8,full_match,"/media/nimashiri/DATA/vsprojects/ICSE23/vul_extract_outside_compilation_pass.cc:1600:  [4] (buffer) StrCat:\n  Does not check for buffer overflows when concatenating to destination\n  [MS-banned] (CWE-120).\n    string then_branch_xla_func_name = absl::StrCat(then_branch.name(), ""_oc""),"
+321,flawfinder,diff,tensorflow,0.03914928436279297,https://github.com/tensorflow/tensorflow/commit/2b8485c1b79d8cc4534096758ec28dab80d5d828,extract_outside_compilation_pass.cc,tensorflow/compiler/jit/extract_outside_compilation_pass.cc,CWE-833,8,full_match,"/media/nimashiri/DATA/vsprojects/ICSE23/vul_extract_outside_compilation_pass.cc:1601:  [4] (buffer) StrCat:\n  Does not check for buffer overflows when concatenating to destination\n  [MS-banned] (CWE-120).\n           else_branch_xla_func_name = absl::StrCat(else_branch.name(), ""_oc"");"
+334,flawfinder,diff,tensorflow,0.02463388442993164,https://github.com/tensorflow/tensorflow/commit/434dbe38970ffc90a5b546780be702e0b5de9a0c,runtime_key_value_sort.cc,tensorflow/compiler/xla/service/cpu/runtime_key_value_sort.cc,CWE-190,1,full_match,"/media/nimashiri/DATA/vsprojects/ICSE23/vul_runtime_key_value_sort.cc:57:  [2] (buffer) memcpy:\n  Does not check for buffer overflows when copying to destination (CWE-120).\n  Make sure destination can always hold the source data.\n  memcpy(&casted_value, &value, sizeof(CastType));"
+345,flawfinder,diff,tensorflow,0.024250268936157227,https://github.com/tensorflow/tensorflow/commit/1132333db732548e85c2c860239421b649dcc5d6,record_writer.cc,tensorflow/core/lib/io/record_writer.cc,CWE-476,1,full_match,"/media/nimashiri/DATA/vsprojects/ICSE23/vul_record_writer.cc:101:  [2] (buffer) char:\n  Statically-sized arrays can be improperly restricted, leading to potential\n  overflows or other issues (CWE-119!/CWE-120). Perform bounds checking, use\n  functions that limit length, or ensure that the size is larger than the\n  maximum possible length.\n  char header[sizeof(uint64) + sizeof(uint32)];"
+358,flawfinder,diff,tensorflow,0.023296356201171875,https://github.com/tensorflow/tensorflow/commit/9cd65e9a9081640934b2b78cf84b6e51ddd69796,reduction_ops_common.cc,tensorflow/compiler/tf2xla/kernels/reduction_ops_common.cc,CWE-121,1,full_match,"Number of rules (primarily dangerous function names) in C/C++ ruleset: 222\nExamining /media/nimashiri/DATA/vsprojects/ICSE23/vul_reduction_ops_common.cc\n\nFINAL RESULTS:\n\n/media/nimashiri/DATA/vsprojects/ICSE23/vul_reduction_ops_common.cc:107:  [4] (buffer) StrCat:\n  Does not check for buffer overflows when concatenating to destination\n  [MS-banned] (CWE-120).\n                            strings::StrCat(desc, ""-reduction""));\n\nANALYSIS SUMMARY:\n\nHits = 1\nLines analyzed = 137 in approximately 0.00 seconds (34953 lines/second)\nPhysical Source Lines of Code (SLOC) = 86\nHits@level = [0]   0 [1]   0 [2]   0 [3]   0 [4]   1 [5]   0\nHits@level+ = [0+]   1 [1+]   1 [2+]   1 [3+]   1 [4+]   1 [5+]   0\nHits/KSLOC@level+ = [0+] 11.6279 [1+] 11.6279 [2+] 11.6279 [3+] 11.6279 [4+] 11.6279 [5+]   0\nMinimum risk level = 1\n\nNot every hit is necessarily a security vulnerability.\nYou can inhibit a report by adding a comment in this form:\n// flawfinder: ignore\nMake *sure* it's a false positive!\nYou can use the option --neverignore to show these.\n\nThere may be other security vulnerabilities; review your code!\nSee 'Secure Programming HOWTO'\n(https://dwheeler.com/secure-programs) for more information."
+362,flawfinder,diff,tensorflow,0.025187253952026367,https://github.com/tensorflow/tensorflow/commit/698bc996f7190f5cd836d48d29b8c1b3ddcd37c2,types.cc,tensorflow/core/framework/types.cc,CWE-121,2,full_match,"/media/nimashiri/DATA/vsprojects/ICSE23/vul_types.cc:53:  [4] (buffer) StrCat:\n  Does not check for buffer overflows when concatenating to destination\n  [MS-banned] (CWE-120).\n    return strings::StrCat(DataTypeString(non_ref), ""_ref"");"
+362,flawfinder,diff,tensorflow,0.025187253952026367,https://github.com/tensorflow/tensorflow/commit/698bc996f7190f5cd836d48d29b8c1b3ddcd37c2,types.cc,tensorflow/core/framework/types.cc,CWE-121,2,full_match,"/media/nimashiri/DATA/vsprojects/ICSE23/vul_types.cc:106:  [4] (buffer) StrCat:\n  Does not check for buffer overflows when concatenating to destination\n  [MS-banned] (CWE-120).\n      return strings::StrCat(""unknown dtype enum ("", dtype, "")"");\n\nANALYSIS SUMMARY:\n\nHits = 2\nLines analyzed = 409 in approximately 0.01 seconds (80762 lines/second)\nPhysical Source Lines of Code (SLOC) = 345\nHits@level = [0]   0 [1]   0 [2]   0 [3]   0 [4]   2 [5]   0\nHits@level+ = [0+]   2 [1+]   2 [2+]   2 [3+]   2 [4+]   2 [5+]   0\nHits/KSLOC@level+ = [0+] 5.7971 [1+] 5.7971 [2+] 5.7971 [3+] 5.7971 [4+] 5.7971 [5+]   0\nMinimum risk level = 1\n\nNot every hit is necessarily a security vulnerability.\nYou can inhibit a report by adding a comment in this form:\n// flawfinder: ignore\nMake *sure* it's a false positive!\nYou can use the option --neverignore to show these.\n\nThere may be other security vulnerabilities; review your code!\nSee 'Secure Programming HOWTO'\n(https://dwheeler.com/secure-programs) for more information."
+372,flawfinder,diff,tensorflow,0.026016712188720703,https://github.com/tensorflow/tensorflow/commit/ebae3deba801b55debbf67205c43ee54f80a7494,load_and_remap_matrix_op.cc,tensorflow/contrib/framework/kernels/load_and_remap_matrix_op.cc,CWE-908,5,full_match,/media/nimashiri/DATA/vsprojects/ICSE23/vul_load_and_remap_matrix_op.cc:54:  [4] (buffer) StrCat:\n  Does not check for buffer overflows when concatenating to destination\n  [MS-banned] (CWE-120).\n                errors::InvalidArgument(strings::StrCat(
+372,flawfinder,diff,tensorflow,0.026016712188720703,https://github.com/tensorflow/tensorflow/commit/ebae3deba801b55debbf67205c43ee54f80a7494,load_and_remap_matrix_op.cc,tensorflow/contrib/framework/kernels/load_and_remap_matrix_op.cc,CWE-908,5,full_match,/media/nimashiri/DATA/vsprojects/ICSE23/vul_load_and_remap_matrix_op.cc:77:  [4] (buffer) StrCat:\n  Does not check for buffer overflows when concatenating to destination\n  [MS-banned] (CWE-120).\n          errors::InvalidArgument(strings::StrCat(
+372,flawfinder,diff,tensorflow,0.026016712188720703,https://github.com/tensorflow/tensorflow/commit/ebae3deba801b55debbf67205c43ee54f80a7494,load_and_remap_matrix_op.cc,tensorflow/contrib/framework/kernels/load_and_remap_matrix_op.cc,CWE-908,5,full_match,/media/nimashiri/DATA/vsprojects/ICSE23/vul_load_and_remap_matrix_op.cc:87:  [4] (buffer) StrCat:\n  Does not check for buffer overflows when concatenating to destination\n  [MS-banned] (CWE-120).\n            errors::Unimplemented(strings::StrCat(
+372,flawfinder,diff,tensorflow,0.026016712188720703,https://github.com/tensorflow/tensorflow/commit/ebae3deba801b55debbf67205c43ee54f80a7494,load_and_remap_matrix_op.cc,tensorflow/contrib/framework/kernels/load_and_remap_matrix_op.cc,CWE-908,5,full_match,/media/nimashiri/DATA/vsprojects/ICSE23/vul_load_and_remap_matrix_op.cc:117:  [4] (buffer) StrCat:\n  Does not check for buffer overflows when concatenating to destination\n  [MS-banned] (CWE-120).\n                errors::InvalidArgument(strings::StrCat(
+372,flawfinder,diff,tensorflow,0.026016712188720703,https://github.com/tensorflow/tensorflow/commit/ebae3deba801b55debbf67205c43ee54f80a7494,load_and_remap_matrix_op.cc,tensorflow/contrib/framework/kernels/load_and_remap_matrix_op.cc,CWE-908,5,full_match,/media/nimashiri/DATA/vsprojects/ICSE23/vul_load_and_remap_matrix_op.cc:211:  [4] (buffer) StrCat:\n  Does not check for buffer overflows when concatenating to destination\n  [MS-banned] (CWE-120).\n                    errors::Internal(strings::StrCat(\n\nANALYSIS SUMMARY:\n\nHits = 8\nLines analyzed = 260 in approximately 0.01 seconds (45098 lines/second)\nPhysical Source Lines of Code (SLOC) = 189\nHits@level = [0]   0 [1]   0 [2]   0 [3]   0 [4]   8 [5]   0\nHits@level+ = [0+]   8 [1+]   8 [2+]   8 [3+]   8 [4+]   8 [5+]   0\nHits/KSLOC@level+ = [0+] 42.328 [1+] 42.328 [2+] 42.328 [3+] 42.328 [4+] 42.328 [5+]   0\nMinimum risk level = 1\n\nNot every hit is necessarily a security vulnerability.\nYou can inhibit a report by adding a comment in this form:\n// flawfinder: ignore\nMake *sure* it's a false positive!\nYou can use the option --neverignore to show these.\n\nThere may be other security vulnerabilities; review your code!\nSee 'Secure Programming HOWTO'\n(https://dwheeler.com/secure-programs) for more information.
+376,flawfinder,diff,tensorflow,0.02364945411682129,https://github.com/tensorflow/tensorflow/commit/e8ee5286a686c6fc3057ba7cf9ba9ef7003789a6,one_hot_op.cc,tensorflow/core/kernels/one_hot_op.cc,CWE-190,1,full_match,Number of rules (primarily dangerous function names) in C/C++ ruleset: 222\nExamining /media/nimashiri/DATA/vsprojects/ICSE23/vul_one_hot_op.cc\n\nFINAL RESULTS:\n\n/media/nimashiri/DATA/vsprojects/ICSE23/vul_one_hot_op.cc:84:  [4] (buffer) StrCat:\n  Does not check for buffer overflows when concatenating to destination\n  [MS-banned] (CWE-120).\n        errors::InvalidArgument(strings::StrCat(\n\nANALYSIS SUMMARY:\n\nHits = 1\nLines analyzed = 189 in approximately 0.00 seconds (42471 lines/second)\nPhysical Source Lines of Code (SLOC) = 126\nHits@level = [0]   0 [1]   0 [2]   0 [3]   0 [4]   1 [5]   0\nHits@level+ = [0+]   1 [1+]   1 [2+]   1 [3+]   1 [4+]   1 [5+]   0\nHits/KSLOC@level+ = [0+] 7.93651 [1+] 7.93651 [2+] 7.93651 [3+] 7.93651 [4+] 7.93651 [5+]   0\nMinimum risk level = 1\n\nNot every hit is necessarily a security vulnerability.\nYou can inhibit a report by adding a comment in this form:\n// flawfinder: ignore\nMake *sure* it's a false positive!\nYou can use the option --neverignore to show these.\n\nThere may be other security vulnerabilities; review your code!\nSee 'Secure Programming HOWTO'\n(https://dwheeler.com/secure-programs) for more information.
+383,flawfinder,diff,tensorflow,0.02846050262451172,https://github.com/tensorflow/tensorflow/commit/b09764d0c95ec3c8f56bc930ab2cc25157630cfb,tensor.cc,tensorflow/core/framework/tensor.cc,CWE-908,1,full_match,"Number of rules (primarily dangerous function names) in C/C++ ruleset: 222\nExamining /media/nimashiri/DATA/vsprojects/ICSE23/vul_tensor.cc\n\nFINAL RESULTS:\n\n/media/nimashiri/DATA/vsprojects/ICSE23/vul_tensor.cc:703:  [4] (buffer) StrCat:\n  Does not check for buffer overflows when concatenating to destination\n  [MS-banned] (CWE-120).\n  return strings::StrCat(""Tensor<type: "", DataTypeString(dtype()), "" shape: "",\n\nANALYSIS SUMMARY:\n\nHits = 1\nLines analyzed = 759 in approximately 0.01 seconds (89138 lines/second)\nPhysical Source Lines of Code (SLOC) = 598\nHits@level = [0]   0 [1]   0 [2]   0 [3]   0 [4]   1 [5]   0\nHits@level+ = [0+]   1 [1+]   1 [2+]   1 [3+]   1 [4+]   1 [5+]   0\nHits/KSLOC@level+ = [0+] 1.67224 [1+] 1.67224 [2+] 1.67224 [3+] 1.67224 [4+] 1.67224 [5+]   0\nMinimum risk level = 1\n\nNot every hit is necessarily a security vulnerability.\nYou can inhibit a report by adding a comment in this form:\n// flawfinder: ignore\nMake *sure* it's a false positive!\nYou can use the option --neverignore to show these.\n\nThere may be other security vulnerabilities; review your code!\nSee 'Secure Programming HOWTO'\n(https://dwheeler.com/secure-programs) for more information."
+384,flawfinder,diff,tensorflow,0.0239408016204834,https://github.com/tensorflow/tensorflow/commit/2092fb45f773db7ff0cfc090cc245594999e4999,concat_lib_cpu.cc,tensorflow/core/kernels/concat_lib_cpu.cc,CWE-190,1,full_match,"Number of rules (primarily dangerous function names) in C/C++ ruleset: 222\nExamining /media/nimashiri/DATA/vsprojects/ICSE23/vul_concat_lib_cpu.cc\n\nFINAL RESULTS:\n\n/media/nimashiri/DATA/vsprojects/ICSE23/vul_concat_lib_cpu.cc:28:  [2] (buffer) memcpy:\n  Does not check for buffer overflows when copying to destination (CWE-120).\n  Make sure destination can always hold the source data.\n    memcpy(dst, src, n * sizeof(T));\n\nANALYSIS SUMMARY:\n\nHits = 1\nLines analyzed = 139 in approximately 0.00 seconds (35246 lines/second)\nPhysical Source Lines of Code (SLOC) = 109\nHits@level = [0]   0 [1]   0 [2]   1 [3]   0 [4]   0 [5]   0\nHits@level+ = [0+]   1 [1+]   1 [2+]   1 [3+]   0 [4+]   0 [5+]   0\nHits/KSLOC@level+ = [0+] 9.17431 [1+] 9.17431 [2+] 9.17431 [3+]   0 [4+]   0 [5+]   0\nMinimum risk level = 1\n\nNot every hit is necessarily a security vulnerability.\nYou can inhibit a report by adding a comment in this form:\n// flawfinder: ignore\nMake *sure* it's a false positive!\nYou can use the option --neverignore to show these.\n\nThere may be other security vulnerabilities; review your code!\nSee 'Secure Programming HOWTO'\n(https://dwheeler.com/secure-programs) for more information."
+391,flawfinder,diff,tensorflow,0.02979445457458496,https://github.com/tensorflow/tensorflow/commit/3d854a744d1236944eb0ecdc172b1825ace565e1,iterator_ops.cc,tensorflow/core/kernels/iterator_ops.cc,CWE-833,1,full_match,"/media/nimashiri/DATA/vsprojects/ICSE23/vul_iterator_ops.cc:493:  [4] (buffer) StrCat:\n  Does not check for buffer overflows when concatenating to destination\n  [MS-banned] (CWE-120).\n            strings::StrCat(""one_shot_iterator_initialization_thread_"","
+392,flawfinder,diff,tensorflow,0.02599930763244629,https://github.com/tensorflow/tensorflow/commit/f7837905c0a24b18841198863a64e8a878c53b44,single_machine.cc,tensorflow/core/grappler/clusters/single_machine.cc,CWE-362,1,full_match,"Number of rules (primarily dangerous function names) in C/C++ ruleset: 222\nExamining /media/nimashiri/DATA/vsprojects/ICSE23/vul_single_machine.cc\n\nFINAL RESULTS:\n\n/media/nimashiri/DATA/vsprojects/ICSE23/vul_single_machine.cc:91:  [4] (buffer) StrCat:\n  Does not check for buffer overflows when concatenating to destination\n  [MS-banned] (CWE-120).\n        strings::StrCat(""/job:localhost/replica:0/task:0/device:GPU:"", i);\n\nANALYSIS SUMMARY:\n\nHits = 1\nLines analyzed = 339 in approximately 0.01 seconds (61369 lines/second)\nPhysical Source Lines of Code (SLOC) = 241\nHits@level = [0]   0 [1]   0 [2]   0 [3]   0 [4]   1 [5]   0\nHits@level+ = [0+]   1 [1+]   1 [2+]   1 [3+]   1 [4+]   1 [5+]   0\nHits/KSLOC@level+ = [0+] 4.14938 [1+] 4.14938 [2+] 4.14938 [3+] 4.14938 [4+] 4.14938 [5+]   0\nMinimum risk level = 1\n\nNot every hit is necessarily a security vulnerability.\nYou can inhibit a report by adding a comment in this form:\n// flawfinder: ignore\nMake *sure* it's a false positive!\nYou can use the option --neverignore to show these.\n\nThere may be other security vulnerabilities; review your code!\nSee 'Secure Programming HOWTO'\n(https://dwheeler.com/secure-programs) for more information."
+399,flawfinder,diff,tensorflow,0.04490494728088379,https://github.com/tensorflow/tensorflow/commit/4a423d13c6814ede1941e35c7cdcdc21ca13e8ef,hlo_instruction.cc,tensorflow/compiler/xla/service/hlo_instruction.cc,CWE-476,1,full_match,"/media/nimashiri/DATA/vsprojects/ICSE23/vul_hlo_instruction.cc:651:  [1] (buffer) equal:\n  Function does not check the second iterator for over-read conditions\n  (CWE-126). This function is often discouraged by most C++ coding standards\n  in favor of its safer alternatives provided since C++14. Consider using a\n  form of this function that checks the second iterator before potentially\n  overflowing it.\n  CHECK(std::equal(operand->shape().dimensions().begin(),"
+409,flawfinder,diff,tensorflow,0.029501914978027344,https://github.com/tensorflow/tensorflow/commit/3a38f48a32f1190520b3647d99752c1d805ffb42,constant_folding.cc,tensorflow/core/grappler/optimizers/constant_folding.cc,CWE-401,1,full_match,"/media/nimashiri/DATA/vsprojects/ICSE23/vul_constant_folding.cc:451:  [4] (buffer) StrCat:\n  Does not check for buffer overflows when concatenating to destination\n  [MS-banned] (CWE-120).\n      node_name = strings::StrCat(node_name, ""-"", i);"
+410,flawfinder,diff,tensorflow,0.030060529708862305,https://github.com/tensorflow/tensorflow/commit/639661f1a7ddb8c82898d0b4247bd1892f03c7ae,debug_io_utils.cc,tensorflow/core/debug/debug_io_utils.cc,CWE-362,3,full_match,/media/nimashiri/DATA/vsprojects/ICSE23/vul_debug_io_utils.cc:796:  [4] (buffer) StrCat:\n  Does not check for buffer overflows when concatenating to destination\n  [MS-banned] (CWE-120).\n    return errors::Cancelled(strings::StrCat(
+410,flawfinder,diff,tensorflow,0.030060529708862305,https://github.com/tensorflow/tensorflow/commit/639661f1a7ddb8c82898d0b4247bd1892f03c7ae,debug_io_utils.cc,tensorflow/core/debug/debug_io_utils.cc,CWE-362,3,full_match,"/media/nimashiri/DATA/vsprojects/ICSE23/vul_debug_io_utils.cc:827:  [4] (buffer) StrCat:\n  Does not check for buffer overflows when concatenating to destination\n  [MS-banned] (CWE-120).\n    return errors::Cancelled(strings::StrCat(""Write event to stream URL "","
+410,flawfinder,diff,tensorflow,0.030060529708862305,https://github.com/tensorflow/tensorflow/commit/639661f1a7ddb8c82898d0b4247bd1892f03c7ae,debug_io_utils.cc,tensorflow/core/debug/debug_io_utils.cc,CWE-362,3,full_match,/media/nimashiri/DATA/vsprojects/ICSE23/vul_debug_io_utils.cc:806:  [1] (buffer) strlen:\n  Does not handle strings that are not \0-terminated; if given one it may\n  perform an over-read (it could cause a crash if unprotected) (CWE-126).\n          ? grpc_stream_url.substr(strlen(DebugIO::kGrpcURLScheme))\n\nANALYSIS SUMMARY:\n\nHits = 26\nLines analyzed = 920 in approximately 0.01 seconds (89757 lines/second)\nPhysical Source Lines of Code (SLOC) = 731\nHits@level = [0]   0 [1]   8 [2]   0 [3]   0 [4]  18 [5]   0\nHits@level+ = [0+]  26 [1+]  26 [2+]  18 [3+]  18 [4+]  18 [5+]   0\nHits/KSLOC@level+ = [0+] 35.5677 [1+] 35.5677 [2+] 24.6238 [3+] 24.6238 [4+] 24.6238 [5+]   0\nMinimum risk level = 1\n\nNot every hit is necessarily a security vulnerability.\nYou can inhibit a report by adding a comment in this form:\n// flawfinder: ignore\nMake *sure* it's a false positive!\nYou can use the option --neverignore to show these.\n\nThere may be other security vulnerabilities; review your code!\nSee 'Secure Programming HOWTO'\n(https://dwheeler.com/secure-programs) for more information.
+416,flawfinder,diff,tensorflow,0.029590606689453125,https://github.com/tensorflow/tensorflow/commit/525b0f05839779e40d0ca9cc2967a3886b6a0f4d,debug_io_utils.cc,tensorflow/core/debug/debug_io_utils.cc,CWE-362,1,full_match,"/media/nimashiri/DATA/vsprojects/ICSE23/vul_debug_io_utils.cc:354:  [4] (buffer) StrCat:\n  Does not check for buffer overflows when concatenating to destination\n  [MS-banned] (CWE-120).\n      const string file_name = strings::StrCat(DebugIO::kMetadataFilePrefix,"
+417,flawfinder,diff,tensorflow,0.025640249252319336,https://github.com/tensorflow/tensorflow/commit/f5fcd1fdcf896f46aed03c7e61525b48b75d1acc,iterator_ops.cc,tensorflow/core/kernels/iterator_ops.cc,CWE-833,2,full_match,"/media/nimashiri/DATA/vsprojects/ICSE23/vul_iterator_ops.cc:294:  [4] (buffer) StrCat:\n  Does not check for buffer overflows when concatenating to destination\n  [MS-banned] (CWE-120).\n            strings::StrCat(""iterator_get_next_thread_"","
+417,flawfinder,diff,tensorflow,0.025640249252319336,https://github.com/tensorflow/tensorflow/commit/f5fcd1fdcf896f46aed03c7e61525b48b75d1acc,iterator_ops.cc,tensorflow/core/kernels/iterator_ops.cc,CWE-833,2,full_match,/media/nimashiri/DATA/vsprojects/ICSE23/vul_iterator_ops.cc:233:  [3] (random) random:\n  This function is not sufficiently random for security-related functions\n  such as key and nonce creation (CWE-327). Use a more secure technique for\n  acquiring random values.\n      opts.step_id = -std::abs(static_cast<int64>(random::New64()));\n\nANALYSIS SUMMARY:\n\nHits = 2\nLines analyzed = 364 in approximately 0.01 seconds (67266 lines/second)\nPhysical Source Lines of Code (SLOC) = 280\nHits@level = [0]   0 [1]   0 [2]   0 [3]   1 [4]   1 [5]   0\nHits@level+ = [0+]   2 [1+]   2 [2+]   2 [3+]   2 [4+]   1 [5+]   0\nHits/KSLOC@level+ = [0+] 7.14286 [1+] 7.14286 [2+] 7.14286 [3+] 7.14286 [4+] 3.57143 [5+]   0\nMinimum risk level = 1\n\nNot every hit is necessarily a security vulnerability.\nYou can inhibit a report by adding a comment in this form:\n// flawfinder: ignore\nMake *sure* it's a false positive!\nYou can use the option --neverignore to show these.\n\nThere may be other security vulnerabilities; review your code!\nSee 'Secure Programming HOWTO'\n(https://dwheeler.com/secure-programs) for more information.
+448,flawfinder,diff,tensorflow,0.026719331741333008,https://github.com/tensorflow/tensorflow/commit/7e572539f7b00d35dacfd5a11807fd302238f6a5,jpeg_mem.cc,tensorflow/core/lib/jpeg/jpeg_mem.cc,CWE-190,1,full_match,"Number of rules (primarily dangerous function names) in C/C++ ruleset: 222\nExamining /media/nimashiri/DATA/vsprojects/ICSE23/vul_jpeg_mem.cc\n\nFINAL RESULTS:\n\n/media/nimashiri/DATA/vsprojects/ICSE23/vul_jpeg_mem.cc:231:  [2] (buffer) memcpy:\n  Does not check for buffer overflows when copying to destination (CWE-120).\n  Make sure destination can always hold the source data.\n            memcpy(output_line, output_line - stride, min_stride);\n\nANALYSIS SUMMARY:\n\nHits = 1\nLines analyzed = 606 in approximately 0.01 seconds (90213 lines/second)\nPhysical Source Lines of Code (SLOC) = 435\nHits@level = [0]   0 [1]   0 [2]   1 [3]   0 [4]   0 [5]   0\nHits@level+ = [0+]   1 [1+]   1 [2+]   1 [3+]   0 [4+]   0 [5+]   0\nHits/KSLOC@level+ = [0+] 2.29885 [1+] 2.29885 [2+] 2.29885 [3+]   0 [4+]   0 [5+]   0\nMinimum risk level = 1\n\nNot every hit is necessarily a security vulnerability.\nYou can inhibit a report by adding a comment in this form:\n// flawfinder: ignore\nMake *sure* it's a false positive!\nYou can use the option --neverignore to show these.\n\nThere may be other security vulnerabilities; review your code!\nSee 'Secure Programming HOWTO'\n(https://dwheeler.com/secure-programs) for more information."
+509,rats,diff,mlpack,0.0033347606658935547,https://github.com/mlpack/mlpack/commit/621fe6211e41fae13b355a1d799428bb684796b3,zhmm.cc,fastlib2/contrib/niche/new_hmm/zhmm.cc,CWE-401,3,full_match,"
+  <severity>Medium</severity>
+  <type>srand48</type>
+  <message>
+    Standard random number generators should not be used to 
+generate randomness used for security reasons.  For security sensitive 
+randomness a crytographic randomness generator that provides sufficient
+entropy should be used.
+  </message>
+  <file>
+    <name>/media/nimashiri/DATA/vsprojects/ICSE23/vul_zhmm.cc</name>
+    <line>10</line>
+    <line>31</line>
+    <line>64</line>
+  </file>
+"
+509,rats,diff,mlpack,0.0033347606658935547,https://github.com/mlpack/mlpack/commit/621fe6211e41fae13b355a1d799428bb684796b3,zhmm.cc,fastlib2/contrib/niche/new_hmm/zhmm.cc,CWE-401,3,full_match,"
+  <severity>Medium</severity>
+  <type>srand48</type>
+  <message>
+    Standard random number generators should not be used to 
+generate randomness used for security reasons.  For security sensitive 
+randomness a crytographic randomness generator that provides sufficient
+entropy should be used.
+  </message>
+  <file>
+    <name>/media/nimashiri/DATA/vsprojects/ICSE23/vul_zhmm.cc</name>
+    <line>10</line>
+    <line>31</line>
+    <line>64</line>
+  </file>
+"
+509,rats,diff,mlpack,0.0033347606658935547,https://github.com/mlpack/mlpack/commit/621fe6211e41fae13b355a1d799428bb684796b3,zhmm.cc,fastlib2/contrib/niche/new_hmm/zhmm.cc,CWE-401,3,full_match,"
+  <severity>Medium</severity>
+  <type>drand48</type>
+  <message>
+    Standard random number generators should not be used to 
+generate randomness used for security reasons.  For security sensitive 
+randomness a crytographic randomness generator that provides sufficient
+entropy should be used.
+  </message>
+  <file>
+    <name>/media/nimashiri/DATA/vsprojects/ICSE23/vul_zhmm.cc</name>
+    <line>38</line>
+    <line>39</line>
+    <line>71</line>
+    <line>72</line>
+  </file>
+"
+548,rats,diff,mxnet,0.0034189224243164062,https://github.com/apache/mxnet/commit/053ffc7f8f7eb085bfefb66749b5938f944844df,image-classification-predict.cc,example/image-classification/predict-cpp/image-classification-predict.cc,CWE-122,1,full_match,"
+  <severity>Medium</severity>
+  <type>read</type>
+  <message>
+    Check buffer boundaries if calling this function in a loop 
+and make sure you are not in danger of writing past the allocated space.
+  </message>
+  <file>
+    <name>/media/nimashiri/DATA/vsprojects/ICSE23/vul_image-classification-predict.cc</name>
+    <line>80</line>
+  </file>
+"
+549,rats,diff,mxnet,0.003275156021118164,https://github.com/apache/mxnet/commit/5f32f32e8c7ce50f20eae1438bf970eba6830578,threaded_engine_perdevice.cc,src/engine/threaded_engine_perdevice.cc,segfault,2,full_match,"
+  <severity>Medium</severity>
+  <type>signal</type>
+  <message>
+    When setting signal handlers, do not use the same function to handle multiple signals. There exists the possibility a race condition will result if 2 or more different signals are sent to the process at nearly the same time. Also, when writing signal handlers, it is best to do as little as possible in them. The best strategy is to use the signal handler to set a flag, that another part of the program tests and performs the appropriate action(s) when it is set.
+    foSee also:
+ http://razor.bindview.com/publish/papers/signals.txt
+  </message>
+  <file>
+    <name>/media/nimashiri/DATA/vsprojects/ICSE23/vul_threaded_engine_perdevice.cc</name>
+    <line>273</line>
+    <line>290</line>
+  </file>
+"
+549,rats,diff,mxnet,0.003275156021118164,https://github.com/apache/mxnet/commit/5f32f32e8c7ce50f20eae1438bf970eba6830578,threaded_engine_perdevice.cc,src/engine/threaded_engine_perdevice.cc,segfault,2,full_match,"
+  <severity>Medium</severity>
+  <type>signal</type>
+  <message>
+    When setting signal handlers, do not use the same function to handle multiple signals. There exists the possibility a race condition will result if 2 or more different signals are sent to the process at nearly the same time. Also, when writing signal handlers, it is best to do as little as possible in them. The best strategy is to use the signal handler to set a flag, that another part of the program tests and performs the appropriate action(s) when it is set.
+    foSee also:
+ http://razor.bindview.com/publish/papers/signals.txt
+  </message>
+  <file>
+    <name>/media/nimashiri/DATA/vsprojects/ICSE23/vul_threaded_engine_perdevice.cc</name>
+    <line>273</line>
+    <line>290</line>
+  </file>
+"
+572,rats,diff,mxnet,0.004076957702636719,https://github.com/apache/mxnet/commit/f9c2689ec2ffd61ce123dce5857f8a797f21e4df,ndarray.cc,src/ndarray/ndarray.cc,CWE-362,2,full_match,"
+  <severity>Low</severity>
+  <type>memcpy</type>
+  <message>
+    Double check that your buffer is as big as you specify.
+When using functions that accept a number n of bytes to copy, such as 
+strncpy, be aware that if the dest buffer size = n it may not NULL-terminate 
+the string.
+  </message>
+  <file>
+    <name>/media/nimashiri/DATA/vsprojects/ICSE23/vul_ndarray.cc</name>
+    <line>377</line>
+    <line>572</line>
+    <line>1008</line>
+  </file>
+"
+572,rats,diff,mxnet,0.004076957702636719,https://github.com/apache/mxnet/commit/f9c2689ec2ffd61ce123dce5857f8a797f21e4df,ndarray.cc,src/ndarray/ndarray.cc,CWE-362,2,full_match,"
+  <severity>Low</severity>
+  <type>memcpy</type>
+  <message>
+    Double check that your buffer is as big as you specify.
+When using functions that accept a number n of bytes to copy, such as 
+strncpy, be aware that if the dest buffer size = n it may not NULL-terminate 
+the string.
+  </message>
+  <file>
+    <name>/media/nimashiri/DATA/vsprojects/ICSE23/vul_ndarray.cc</name>
+    <line>377</line>
+    <line>572</line>
+    <line>1008</line>
+  </file>
+"
+621,rats,diff,pytorch,0.004556417465209961,https://github.com/pytorch/pytorch/commit/74828be4a7d0d2dba3f0ec3f6e79265cdfae5329,THTensor.cpp,aten/src/TH/generic/THTensor.cpp,CWE-190,1,full_match,"
+  <severity>Low</severity>
+  <type>memcpy</type>
+  <message>
+    Double check that your buffer is as big as you specify.
+When using functions that accept a number n of bytes to copy, such as 
+strncpy, be aware that if the dest buffer size = n it may not NULL-terminate 
+the string.
+  </message>
+  <file>
+    <name>/media/nimashiri/DATA/vsprojects/ICSE23/vul_THTensor.cpp</name>
+    <line>804</line>
+  </file>
+"
+659,rats,diff,tensorflow,0.003790616989135742,https://github.com/tensorflow/tensorflow/commit/698e01511f62a3c185754db78ebce0eee1f0184d,decode_padded_raw_op.cc,tensorflow/core/kernels/decode_padded_raw_op.cc,CWE-197,2,full_match,"
+  <severity>Low</severity>
+  <type>memcpy</type>
+  <message>
+    Double check that your buffer is as big as you specify.
+When using functions that accept a number n of bytes to copy, such as 
+strncpy, be aware that if the dest buffer size = n it may not NULL-terminate 
+the string.
+  </message>
+  <file>
+    <name>/media/nimashiri/DATA/vsprojects/ICSE23/vul_decode_padded_raw_op.cc</name>
+    <line>89</line>
+    <line>91</line>
+  </file>
+"
+659,rats,diff,tensorflow,0.003790616989135742,https://github.com/tensorflow/tensorflow/commit/698e01511f62a3c185754db78ebce0eee1f0184d,decode_padded_raw_op.cc,tensorflow/core/kernels/decode_padded_raw_op.cc,CWE-197,2,full_match,"
+  <severity>Low</severity>
+  <type>memcpy</type>
+  <message>
+    Double check that your buffer is as big as you specify.
+When using functions that accept a number n of bytes to copy, such as 
+strncpy, be aware that if the dest buffer size = n it may not NULL-terminate 
+the string.
+  </message>
+  <file>
+    <name>/media/nimashiri/DATA/vsprojects/ICSE23/vul_decode_padded_raw_op.cc</name>
+    <line>89</line>
+    <line>91</line>
+  </file>
+"
+678,rats,diff,tensorflow,0.0061719417572021484,https://github.com/tensorflow/tensorflow/commit/f60e73456ed6c0e121a9d2b308f9c9f8f9a3cdb7,hlo_instruction.cc,tensorflow/compiler/xla/service/hlo_instruction.cc,CWE-122,2,full_match,"
+  <severity>High</severity>
+  <message>
+    Check to be sure that argument 2 passed to this function call will not
+    copy more data than can be handled, resulting in a buffer overflow.
+  </message>
+  <file>
+    <name>/media/nimashiri/DATA/vsprojects/ICSE23/vul_hlo_instruction.cc</name>
+    <line>2614</line>
+    <line>2890</line>
+    <line>2893</line>
+    <line>2896</line>
+    <line>2898</line>
+    <line>2902</line>
+    <line>2905</line>
+    <line>2908</line>
+    <line>2924</line>
+    <line>2927</line>
+    <line>2937</line>
+    <line>2955</line>
+    <line>2956</line>
+    <line>2959</line>
+    <line>2960</line>
+    <line>2964</line>
+    <line>2966</line>
+    <line>2969</line>
+    <line>2986</line>
+    <line>2990</line>
+    <line>3003</line>
+    <line>3006</line>
+    <line>3015</line>
+    <line>3028</line>
+    <line>3787</line>
+    <line>3840</line>
+    <line>3842</line>
+  </file>
+"
+678,rats,diff,tensorflow,0.0061719417572021484,https://github.com/tensorflow/tensorflow/commit/f60e73456ed6c0e121a9d2b308f9c9f8f9a3cdb7,hlo_instruction.cc,tensorflow/compiler/xla/service/hlo_instruction.cc,CWE-122,2,full_match,"
+  <severity>High</severity>
+  <message>
+    Check to be sure that argument 2 passed to this function call will not
+    copy more data than can be handled, resulting in a buffer overflow.
+  </message>
+  <file>
+    <name>/media/nimashiri/DATA/vsprojects/ICSE23/vul_hlo_instruction.cc</name>
+    <line>2614</line>
+    <line>2890</line>
+    <line>2893</line>
+    <line>2896</line>
+    <line>2898</line>
+    <line>2902</line>
+    <line>2905</line>
+    <line>2908</line>
+    <line>2924</line>
+    <line>2927</line>
+    <line>2937</line>
+    <line>2955</line>
+    <line>2956</line>
+    <line>2959</line>
+    <line>2960</line>
+    <line>2964</line>
+    <line>2966</line>
+    <line>2969</line>
+    <line>2986</line>
+    <line>2990</line>
+    <line>3003</line>
+    <line>3006</line>
+    <line>3015</line>
+    <line>3028</line>
+    <line>3787</line>
+    <line>3840</line>
+    <line>3842</line>
+  </file>
+"
+678,rats,diff,tensorflow,0.00540614128112793,https://github.com/tensorflow/tensorflow/commit/f60e73456ed6c0e121a9d2b308f9c9f8f9a3cdb7,hlo_parser.cc,tensorflow/compiler/xla/service/hlo_parser.cc,CWE-122,3,full_match,"
+  <severity>High</severity>
+  <message>
+    Check to be sure that argument 2 passed to this function call will not
+    copy more data than can be handled, resulting in a buffer overflow.
+  </message>
+  <file>
+    <name>/media/nimashiri/DATA/vsprojects/ICSE23/vul_hlo_parser.cc</name>
+    <line>583</line>
+    <line>641</line>
+    <line>916</line>
+    <line>1635</line>
+    <line>1877</line>
+    <line>2348</line>
+    <line>2357</line>
+    <line>2366</line>
+    <line>2616</line>
+    <line>2666</line>
+    <line>2681</line>
+    <line>2691</line>
+    <line>2977</line>
+    <line>3105</line>
+    <line>3153</line>
+    <line>3159</line>
+    <line>3194</line>
+    <line>3319</line>
+    <line>3330</line>
+    <line>3337</line>
+    <line>3419</line>
+    <line>3427</line>
+    <line>3518</line>
+    <line>3534</line>
+    <line>3609</line>
+    <line>4067</line>
+    <line>4116</line>
+    <line>4198</line>
+    <line>4221</line>
+    <line>4244</line>
+    <line>4422</line>
+    <line>4436</line>
+    <line>4543</line>
+    <line>4551</line>
+    <line>4581</line>
+    <line>4614</line>
+    <line>4652</line>
+    <line>5034</line>
+    <line>5131</line>
+    <line>5143</line>
+    <line>5266</line>
+  </file>
+"
+678,rats,diff,tensorflow,0.00540614128112793,https://github.com/tensorflow/tensorflow/commit/f60e73456ed6c0e121a9d2b308f9c9f8f9a3cdb7,hlo_parser.cc,tensorflow/compiler/xla/service/hlo_parser.cc,CWE-122,3,full_match,"
+  <severity>High</severity>
+  <message>
+    Check to be sure that argument 2 passed to this function call will not
+    copy more data than can be handled, resulting in a buffer overflow.
+  </message>
+  <file>
+    <name>/media/nimashiri/DATA/vsprojects/ICSE23/vul_hlo_parser.cc</name>
+    <line>583</line>
+    <line>641</line>
+    <line>916</line>
+    <line>1635</line>
+    <line>1877</line>
+    <line>2348</line>
+    <line>2357</line>
+    <line>2366</line>
+    <line>2616</line>
+    <line>2666</line>
+    <line>2681</line>
+    <line>2691</line>
+    <line>2977</line>
+    <line>3105</line>
+    <line>3153</line>
+    <line>3159</line>
+    <line>3194</line>
+    <line>3319</line>
+    <line>3330</line>
+    <line>3337</line>
+    <line>3419</line>
+    <line>3427</line>
+    <line>3518</line>
+    <line>3534</line>
+    <line>3609</line>
+    <line>4067</line>
+    <line>4116</line>
+    <line>4198</line>
+    <line>4221</line>
+    <line>4244</line>
+    <line>4422</line>
+    <line>4436</line>
+    <line>4543</line>
+    <line>4551</line>
+    <line>4581</line>
+    <line>4614</line>
+    <line>4652</line>
+    <line>5034</line>
+    <line>5131</line>
+    <line>5143</line>
+    <line>5266</line>
+  </file>
+"
+678,rats,diff,tensorflow,0.00540614128112793,https://github.com/tensorflow/tensorflow/commit/f60e73456ed6c0e121a9d2b308f9c9f8f9a3cdb7,hlo_parser.cc,tensorflow/compiler/xla/service/hlo_parser.cc,CWE-122,3,full_match,"
+  <severity>High</severity>
+  <message>
+    Check to be sure that argument 2 passed to this function call will not
+    copy more data than can be handled, resulting in a buffer overflow.
+  </message>
+  <file>
+    <name>/media/nimashiri/DATA/vsprojects/ICSE23/vul_hlo_parser.cc</name>
+    <line>583</line>
+    <line>641</line>
+    <line>916</line>
+    <line>1635</line>
+    <line>1877</line>
+    <line>2348</line>
+    <line>2357</line>
+    <line>2366</line>
+    <line>2616</line>
+    <line>2666</line>
+    <line>2681</line>
+    <line>2691</line>
+    <line>2977</line>
+    <line>3105</line>
+    <line>3153</line>
+    <line>3159</line>
+    <line>3194</line>
+    <line>3319</line>
+    <line>3330</line>
+    <line>3337</line>
+    <line>3419</line>
+    <line>3427</line>
+    <line>3518</line>
+    <line>3534</line>
+    <line>3609</line>
+    <line>4067</line>
+    <line>4116</line>
+    <line>4198</line>
+    <line>4221</line>
+    <line>4244</line>
+    <line>4422</line>
+    <line>4436</line>
+    <line>4543</line>
+    <line>4551</line>
+    <line>4581</line>
+    <line>4614</line>
+    <line>4652</line>
+    <line>5034</line>
+    <line>5131</line>
+    <line>5143</line>
+    <line>5266</line>
+  </file>
+"
+685,rats,diff,tensorflow,0.005257606506347656,https://github.com/tensorflow/tensorflow/commit/aa44812e3e40b1c95586466bc177b07525b787ea,function.cc,tensorflow/core/framework/function.cc,CWE-908,1,full_match,"
+  <severity>High</severity>
+  <message>
+    Check to be sure that argument 2 passed to this function call will not
+    copy more data than can be handled, resulting in a buffer overflow.
+  </message>
+  <file>
+    <name>/media/nimashiri/DATA/vsprojects/ICSE23/vul_function.cc</name>
+    <line>420</line>
+    <line>432</line>
+    <line>545</line>
+    <line>1055</line>
+    <line>1515</line>
+    <line>1518</line>
+    <line>1762</line>
+    <line>1805</line>
+    <line>1913</line>
+  </file>
+"
+770,rats,diff,tensorflow,0.004889011383056641,https://github.com/tensorflow/tensorflow/commit/2b8485c1b79d8cc4534096758ec28dab80d5d828,extract_outside_compilation_pass.cc,tensorflow/compiler/jit/extract_outside_compilation_pass.cc,CWE-833,5,full_match,"
+  <severity>High</severity>
+  <message>
+    Check to be sure that argument 2 passed to this function call will not
+    copy more data than can be handled, resulting in a buffer overflow.
+  </message>
+  <file>
+    <name>/media/nimashiri/DATA/vsprojects/ICSE23/vul_extract_outside_compilation_pass.cc</name>
+    <line>101</line>
+    <line>111</line>
+    <line>203</line>
+    <line>213</line>
+    <line>294</line>
+    <line>533</line>
+    <line>550</line>
+    <line>848</line>
+    <line>1132</line>
+    <line>1143</line>
+    <line>1167</line>
+    <line>1241</line>
+    <line>1299</line>
+    <line>1316</line>
+    <line>1372</line>
+    <line>1404</line>
+    <line>1424</line>
+    <line>1484</line>
+    <line>1545</line>
+    <line>1578</line>
+    <line>1597</line>
+    <line>1599</line>
+    <line>1629</line>
+    <line>1636</line>
+    <line>1647</line>
+    <line>1664</line>
+    <line>1665</line>
+    <line>1692</line>
+    <line>1702</line>
+    <line>1805</line>
+    <line>1814</line>
+    <line>1863</line>
+    <line>1994</line>
+    <line>2021</line>
+  </file>
+"
+770,rats,diff,tensorflow,0.004889011383056641,https://github.com/tensorflow/tensorflow/commit/2b8485c1b79d8cc4534096758ec28dab80d5d828,extract_outside_compilation_pass.cc,tensorflow/compiler/jit/extract_outside_compilation_pass.cc,CWE-833,5,full_match,"
+  <severity>High</severity>
+  <message>
+    Check to be sure that argument 2 passed to this function call will not
+    copy more data than can be handled, resulting in a buffer overflow.
+  </message>
+  <file>
+    <name>/media/nimashiri/DATA/vsprojects/ICSE23/vul_extract_outside_compilation_pass.cc</name>
+    <line>101</line>
+    <line>111</line>
+    <line>203</line>
+    <line>213</line>
+    <line>294</line>
+    <line>533</line>
+    <line>550</line>
+    <line>848</line>
+    <line>1132</line>
+    <line>1143</line>
+    <line>1167</line>
+    <line>1241</line>
+    <line>1299</line>
+    <line>1316</line>
+    <line>1372</line>
+    <line>1404</line>
+    <line>1424</line>
+    <line>1484</line>
+    <line>1545</line>
+    <line>1578</line>
+    <line>1597</line>
+    <line>1599</line>
+    <line>1629</line>
+    <line>1636</line>
+    <line>1647</line>
+    <line>1664</line>
+    <line>1665</line>
+    <line>1692</line>
+    <line>1702</line>
+    <line>1805</line>
+    <line>1814</line>
+    <line>1863</line>
+    <line>1994</line>
+    <line>2021</line>
+  </file>
+"
+770,rats,diff,tensorflow,0.004889011383056641,https://github.com/tensorflow/tensorflow/commit/2b8485c1b79d8cc4534096758ec28dab80d5d828,extract_outside_compilation_pass.cc,tensorflow/compiler/jit/extract_outside_compilation_pass.cc,CWE-833,5,full_match,"
+  <severity>High</severity>
+  <message>
+    Check to be sure that argument 2 passed to this function call will not
+    copy more data than can be handled, resulting in a buffer overflow.
+  </message>
+  <file>
+    <name>/media/nimashiri/DATA/vsprojects/ICSE23/vul_extract_outside_compilation_pass.cc</name>
+    <line>101</line>
+    <line>111</line>
+    <line>203</line>
+    <line>213</line>
+    <line>294</line>
+    <line>533</line>
+    <line>550</line>
+    <line>848</line>
+    <line>1132</line>
+    <line>1143</line>
+    <line>1167</line>
+    <line>1241</line>
+    <line>1299</line>
+    <line>1316</line>
+    <line>1372</line>
+    <line>1404</line>
+    <line>1424</line>
+    <line>1484</line>
+    <line>1545</line>
+    <line>1578</line>
+    <line>1597</line>
+    <line>1599</line>
+    <line>1629</line>
+    <line>1636</line>
+    <line>1647</line>
+    <line>1664</line>
+    <line>1665</line>
+    <line>1692</line>
+    <line>1702</line>
+    <line>1805</line>
+    <line>1814</line>
+    <line>1863</line>
+    <line>1994</line>
+    <line>2021</line>
+  </file>
+"
+770,rats,diff,tensorflow,0.004889011383056641,https://github.com/tensorflow/tensorflow/commit/2b8485c1b79d8cc4534096758ec28dab80d5d828,extract_outside_compilation_pass.cc,tensorflow/compiler/jit/extract_outside_compilation_pass.cc,CWE-833,5,full_match,"
+  <severity>High</severity>
+  <message>
+    Check to be sure that argument 2 passed to this function call will not
+    copy more data than can be handled, resulting in a buffer overflow.
+  </message>
+  <file>
+    <name>/media/nimashiri/DATA/vsprojects/ICSE23/vul_extract_outside_compilation_pass.cc</name>
+    <line>101</line>
+    <line>111</line>
+    <line>203</line>
+    <line>213</line>
+    <line>294</line>
+    <line>533</line>
+    <line>550</line>
+    <line>848</line>
+    <line>1132</line>
+    <line>1143</line>
+    <line>1167</line>
+    <line>1241</line>
+    <line>1299</line>
+    <line>1316</line>
+    <line>1372</line>
+    <line>1404</line>
+    <line>1424</line>
+    <line>1484</line>
+    <line>1545</line>
+    <line>1578</line>
+    <line>1597</line>
+    <line>1599</line>
+    <line>1629</line>
+    <line>1636</line>
+    <line>1647</line>
+    <line>1664</line>
+    <line>1665</line>
+    <line>1692</line>
+    <line>1702</line>
+    <line>1805</line>
+    <line>1814</line>
+    <line>1863</line>
+    <line>1994</line>
+    <line>2021</line>
+  </file>
+"
+770,rats,diff,tensorflow,0.004889011383056641,https://github.com/tensorflow/tensorflow/commit/2b8485c1b79d8cc4534096758ec28dab80d5d828,extract_outside_compilation_pass.cc,tensorflow/compiler/jit/extract_outside_compilation_pass.cc,CWE-833,5,full_match,"
+  <severity>High</severity>
+  <message>
+    Check to be sure that argument 2 passed to this function call will not
+    copy more data than can be handled, resulting in a buffer overflow.
+  </message>
+  <file>
+    <name>/media/nimashiri/DATA/vsprojects/ICSE23/vul_extract_outside_compilation_pass.cc</name>
+    <line>101</line>
+    <line>111</line>
+    <line>203</line>
+    <line>213</line>
+    <line>294</line>
+    <line>533</line>
+    <line>550</line>
+    <line>848</line>
+    <line>1132</line>
+    <line>1143</line>
+    <line>1167</line>
+    <line>1241</line>
+    <line>1299</line>
+    <line>1316</line>
+    <line>1372</line>
+    <line>1404</line>
+    <line>1424</line>
+    <line>1484</line>
+    <line>1545</line>
+    <line>1578</line>
+    <line>1597</line>
+    <line>1599</line>
+    <line>1629</line>
+    <line>1636</line>
+    <line>1647</line>
+    <line>1664</line>
+    <line>1665</line>
+    <line>1692</line>
+    <line>1702</line>
+    <line>1805</line>
+    <line>1814</line>
+    <line>1863</line>
+    <line>1994</line>
+    <line>2021</line>
+  </file>
+"
+783,rats,diff,tensorflow,0.0039179325103759766,https://github.com/tensorflow/tensorflow/commit/434dbe38970ffc90a5b546780be702e0b5de9a0c,runtime_key_value_sort.cc,tensorflow/compiler/xla/service/cpu/runtime_key_value_sort.cc,CWE-190,1,full_match,"
+  <severity>Low</severity>
+  <type>memcpy</type>
+  <message>
+    Double check that your buffer is as big as you specify.
+When using functions that accept a number n of bytes to copy, such as 
+strncpy, be aware that if the dest buffer size = n it may not NULL-terminate 
+the string.
+  </message>
+  <file>
+    <name>/media/nimashiri/DATA/vsprojects/ICSE23/vul_runtime_key_value_sort.cc</name>
+    <line>57</line>
+    <line>163</line>
+  </file>
+"
+794,rats,diff,tensorflow,0.00399470329284668,https://github.com/tensorflow/tensorflow/commit/1132333db732548e85c2c860239421b649dcc5d6,record_writer.cc,tensorflow/core/lib/io/record_writer.cc,CWE-476,1,full_match,"
+  <severity>High</severity>
+  <type>fixed size global buffer</type>
+  <message>
+    Extra care should be taken to ensure that character arrays that are
+    allocated on the stack are used safely.  They are prime targets for
+    buffer overflow attacks.
+  </message>
+  <file>
+    <name>/media/nimashiri/DATA/vsprojects/ICSE23/vul_record_writer.cc</name>
+    <line>101</line>
+    <line>105</line>
+  </file>
+"
+811,rats,diff,tensorflow,0.004061222076416016,https://github.com/tensorflow/tensorflow/commit/698bc996f7190f5cd836d48d29b8c1b3ddcd37c2,types.cc,tensorflow/core/framework/types.cc,CWE-121,1,full_match,"
+  <severity>High</severity>
+  <message>
+    Check to be sure that argument 2 passed to this function call will not
+    copy more data than can be handled, resulting in a buffer overflow.
+  </message>
+  <file>
+    <name>/media/nimashiri/DATA/vsprojects/ICSE23/vul_types.cc</name>
+    <line>106</line>
+  </file>
+"
+821,rats,diff,tensorflow,0.004067182540893555,https://github.com/tensorflow/tensorflow/commit/ebae3deba801b55debbf67205c43ee54f80a7494,load_and_remap_matrix_op.cc,tensorflow/contrib/framework/kernels/load_and_remap_matrix_op.cc,CWE-908,5,full_match,"
+  <severity>High</severity>
+  <message>
+    Check to be sure that argument 2 passed to this function call will not
+    copy more data than can be handled, resulting in a buffer overflow.
+  </message>
+  <file>
+    <name>/media/nimashiri/DATA/vsprojects/ICSE23/vul_load_and_remap_matrix_op.cc</name>
+    <line>54</line>
+    <line>77</line>
+    <line>87</line>
+    <line>117</line>
+    <line>124</line>
+    <line>134</line>
+    <line>158</line>
+    <line>211</line>
+  </file>
+"
+821,rats,diff,tensorflow,0.004067182540893555,https://github.com/tensorflow/tensorflow/commit/ebae3deba801b55debbf67205c43ee54f80a7494,load_and_remap_matrix_op.cc,tensorflow/contrib/framework/kernels/load_and_remap_matrix_op.cc,CWE-908,5,full_match,"
+  <severity>High</severity>
+  <message>
+    Check to be sure that argument 2 passed to this function call will not
+    copy more data than can be handled, resulting in a buffer overflow.
+  </message>
+  <file>
+    <name>/media/nimashiri/DATA/vsprojects/ICSE23/vul_load_and_remap_matrix_op.cc</name>
+    <line>54</line>
+    <line>77</line>
+    <line>87</line>
+    <line>117</line>
+    <line>124</line>
+    <line>134</line>
+    <line>158</line>
+    <line>211</line>
+  </file>
+"
+821,rats,diff,tensorflow,0.004067182540893555,https://github.com/tensorflow/tensorflow/commit/ebae3deba801b55debbf67205c43ee54f80a7494,load_and_remap_matrix_op.cc,tensorflow/contrib/framework/kernels/load_and_remap_matrix_op.cc,CWE-908,5,full_match,"
+  <severity>High</severity>
+  <message>
+    Check to be sure that argument 2 passed to this function call will not
+    copy more data than can be handled, resulting in a buffer overflow.
+  </message>
+  <file>
+    <name>/media/nimashiri/DATA/vsprojects/ICSE23/vul_load_and_remap_matrix_op.cc</name>
+    <line>54</line>
+    <line>77</line>
+    <line>87</line>
+    <line>117</line>
+    <line>124</line>
+    <line>134</line>
+    <line>158</line>
+    <line>211</line>
+  </file>
+"
+821,rats,diff,tensorflow,0.004067182540893555,https://github.com/tensorflow/tensorflow/commit/ebae3deba801b55debbf67205c43ee54f80a7494,load_and_remap_matrix_op.cc,tensorflow/contrib/framework/kernels/load_and_remap_matrix_op.cc,CWE-908,5,full_match,"
+  <severity>High</severity>
+  <message>
+    Check to be sure that argument 2 passed to this function call will not
+    copy more data than can be handled, resulting in a buffer overflow.
+  </message>
+  <file>
+    <name>/media/nimashiri/DATA/vsprojects/ICSE23/vul_load_and_remap_matrix_op.cc</name>
+    <line>54</line>
+    <line>77</line>
+    <line>87</line>
+    <line>117</line>
+    <line>124</line>
+    <line>134</line>
+    <line>158</line>
+    <line>211</line>
+  </file>
+"
+821,rats,diff,tensorflow,0.004067182540893555,https://github.com/tensorflow/tensorflow/commit/ebae3deba801b55debbf67205c43ee54f80a7494,load_and_remap_matrix_op.cc,tensorflow/contrib/framework/kernels/load_and_remap_matrix_op.cc,CWE-908,5,full_match,"
+  <severity>High</severity>
+  <message>
+    Check to be sure that argument 2 passed to this function call will not
+    copy more data than can be handled, resulting in a buffer overflow.
+  </message>
+  <file>
+    <name>/media/nimashiri/DATA/vsprojects/ICSE23/vul_load_and_remap_matrix_op.cc</name>
+    <line>54</line>
+    <line>77</line>
+    <line>87</line>
+    <line>117</line>
+    <line>124</line>
+    <line>134</line>
+    <line>158</line>
+    <line>211</line>
+  </file>
+"
+825,rats,diff,tensorflow,0.003428936004638672,https://github.com/tensorflow/tensorflow/commit/e8ee5286a686c6fc3057ba7cf9ba9ef7003789a6,one_hot_op.cc,tensorflow/core/kernels/one_hot_op.cc,CWE-190,1,full_match,"
+  <severity>High</severity>
+  <message>
+    Check to be sure that argument 2 passed to this function call will not
+    copy more data than can be handled, resulting in a buffer overflow.
+  </message>
+  <file>
+    <name>/media/nimashiri/DATA/vsprojects/ICSE23/vul_one_hot_op.cc</name>
+    <line>84</line>
+  </file>
+"
+832,rats,diff,tensorflow,0.004351377487182617,https://github.com/tensorflow/tensorflow/commit/b09764d0c95ec3c8f56bc930ab2cc25157630cfb,tensor.cc,tensorflow/core/framework/tensor.cc,CWE-908,1,full_match,"
+  <severity>High</severity>
+  <message>
+    Check to be sure that argument 2 passed to this function call will not
+    copy more data than can be handled, resulting in a buffer overflow.
+  </message>
+  <file>
+    <name>/media/nimashiri/DATA/vsprojects/ICSE23/vul_tensor.cc</name>
+    <line>703</line>
+  </file>
+"
+833,rats,diff,tensorflow,0.003988742828369141,https://github.com/tensorflow/tensorflow/commit/2092fb45f773db7ff0cfc090cc245594999e4999,concat_lib_cpu.cc,tensorflow/core/kernels/concat_lib_cpu.cc,CWE-190,1,full_match,"
+  <severity>Low</severity>
+  <type>memcpy</type>
+  <message>
+    Double check that your buffer is as big as you specify.
+When using functions that accept a number n of bytes to copy, such as 
+strncpy, be aware that if the dest buffer size = n it may not NULL-terminate 
+the string.
+  </message>
+  <file>
+    <name>/media/nimashiri/DATA/vsprojects/ICSE23/vul_concat_lib_cpu.cc</name>
+    <line>28</line>
+  </file>
+"
+840,rats,diff,tensorflow,0.004296541213989258,https://github.com/tensorflow/tensorflow/commit/3d854a744d1236944eb0ecdc172b1825ace565e1,iterator_ops.cc,tensorflow/core/kernels/iterator_ops.cc,CWE-833,1,full_match,"
+  <severity>High</severity>
+  <message>
+    Check to be sure that argument 2 passed to this function call will not
+    copy more data than can be handled, resulting in a buffer overflow.
+  </message>
+  <file>
+    <name>/media/nimashiri/DATA/vsprojects/ICSE23/vul_iterator_ops.cc</name>
+    <line>493</line>
+    <line>680</line>
+  </file>
+"
+841,rats,diff,tensorflow,0.004289388656616211,https://github.com/tensorflow/tensorflow/commit/f7837905c0a24b18841198863a64e8a878c53b44,single_machine.cc,tensorflow/core/grappler/clusters/single_machine.cc,CWE-362,1,full_match,"
+  <severity>High</severity>
+  <message>
+    Check to be sure that argument 2 passed to this function call will not
+    copy more data than can be handled, resulting in a buffer overflow.
+  </message>
+  <file>
+    <name>/media/nimashiri/DATA/vsprojects/ICSE23/vul_single_machine.cc</name>
+    <line>91</line>
+  </file>
+"
+859,rats,diff,tensorflow,0.0044329166412353516,https://github.com/tensorflow/tensorflow/commit/639661f1a7ddb8c82898d0b4247bd1892f03c7ae,debug_io_utils.cc,tensorflow/core/debug/debug_io_utils.cc,CWE-362,3,full_match,"
+  <severity>High</severity>
+  <message>
+    Check to be sure that argument 2 passed to this function call will not
+    copy more data than can be handled, resulting in a buffer overflow.
+  </message>
+  <file>
+    <name>/media/nimashiri/DATA/vsprojects/ICSE23/vul_debug_io_utils.cc</name>
+    <line>397</line>
+    <line>447</line>
+    <line>454</line>
+    <line>495</line>
+    <line>613</line>
+    <line>654</line>
+    <line>660</line>
+    <line>671</line>
+    <line>678</line>
+    <line>796</line>
+    <line>827</line>
+  </file>
+"
+859,rats,diff,tensorflow,0.0044329166412353516,https://github.com/tensorflow/tensorflow/commit/639661f1a7ddb8c82898d0b4247bd1892f03c7ae,debug_io_utils.cc,tensorflow/core/debug/debug_io_utils.cc,CWE-362,3,full_match,"
+  <severity>High</severity>
+  <message>
+    Check to be sure that argument 2 passed to this function call will not
+    copy more data than can be handled, resulting in a buffer overflow.
+  </message>
+  <file>
+    <name>/media/nimashiri/DATA/vsprojects/ICSE23/vul_debug_io_utils.cc</name>
+    <line>397</line>
+    <line>447</line>
+    <line>454</line>
+    <line>495</line>
+    <line>613</line>
+    <line>654</line>
+    <line>660</line>
+    <line>671</line>
+    <line>678</line>
+    <line>796</line>
+    <line>827</line>
+  </file>
+"
+859,rats,diff,tensorflow,0.0044329166412353516,https://github.com/tensorflow/tensorflow/commit/639661f1a7ddb8c82898d0b4247bd1892f03c7ae,debug_io_utils.cc,tensorflow/core/debug/debug_io_utils.cc,CWE-362,3,full_match,"
+  <severity>Low</severity>
+  <type>strlen</type>
+  <message>
+    This function does not properly handle non-NULL terminated
+strings.  This does not result in exploitable code, but can lead to access 
+violations.
+  </message>
+  <file>
+    <name>/media/nimashiri/DATA/vsprojects/ICSE23/vul_debug_io_utils.cc</name>
+    <line>377</line>
+    <line>393</line>
+    <line>419</line>
+    <line>440</line>
+    <line>491</line>
+    <line>517</line>
+    <line>536</line>
+    <line>806</line>
+  </file>
+"
+865,rats,diff,tensorflow,0.004464149475097656,https://github.com/tensorflow/tensorflow/commit/525b0f05839779e40d0ca9cc2967a3886b6a0f4d,debug_io_utils.cc,tensorflow/core/debug/debug_io_utils.cc,CWE-362,1,full_match,"
+  <severity>High</severity>
+  <message>
+    Check to be sure that argument 2 passed to this function call will not
+    copy more data than can be handled, resulting in a buffer overflow.
+  </message>
+  <file>
+    <name>/media/nimashiri/DATA/vsprojects/ICSE23/vul_debug_io_utils.cc</name>
+    <line>175</line>
+    <line>261</line>
+    <line>306</line>
+    <line>313</line>
+    <line>354</line>
+    <line>480</line>
+    <line>521</line>
+    <line>527</line>
+    <line>538</line>
+    <line>545</line>
+    <line>662</line>
+  </file>
+"
+866,rats,diff,tensorflow,0.004871845245361328,https://github.com/tensorflow/tensorflow/commit/f5fcd1fdcf896f46aed03c7e61525b48b75d1acc,iterator_ops.cc,tensorflow/core/kernels/iterator_ops.cc,CWE-833,1,full_match,"
+  <severity>High</severity>
+  <message>
+    Check to be sure that argument 2 passed to this function call will not
+    copy more data than can be handled, resulting in a buffer overflow.
+  </message>
+  <file>
+    <name>/media/nimashiri/DATA/vsprojects/ICSE23/vul_iterator_ops.cc</name>
+    <line>294</line>
+  </file>
+"
+897,rats,diff,tensorflow,0.0041577816009521484,https://github.com/tensorflow/tensorflow/commit/7e572539f7b00d35dacfd5a11807fd302238f6a5,jpeg_mem.cc,tensorflow/core/lib/jpeg/jpeg_mem.cc,CWE-190,1,full_match,"
+  <severity>Low</severity>
+  <type>memcpy</type>
+  <message>
+    Double check that your buffer is as big as you specify.
+When using functions that accept a number n of bytes to copy, such as 
+strncpy, be aware that if the dest buffer size = n it may not NULL-terminate 
+the string.
+  </message>
+  <file>
+    <name>/media/nimashiri/DATA/vsprojects/ICSE23/vul_jpeg_mem.cc</name>
+    <line>231</line>
+  </file>
+"
+959,cppcheck,diff,mlpack,0.01566791534423828,https://github.com/mlpack/mlpack/commit/ec2a18f24a38c38dd52acf65acc731a19460487c,multi_tree_fock.cc,fastlib2/contrib/march/fock_matrix/multi_tree/multi_tree_fock.cc,CWE-908,1,full_match,"<results version=""2"">\n    <cppcheck version=""2.7""/>\n    <errors>\nChecking /media/nimashiri/DATA/vsprojects/ICSE23/vul_multi_tree_fock.cc ...\n        <error id=""missingReturn"" severity=""error"" msg=""Found a exit path from function with non-void return type that has missing return statement"" verbose=""Found a exit path from function with non-void return type that has missing return statement"" cwe=""758"" file0=""/media/nimashiri/DATA/vsprojects/ICSE23/vul_multi_tree_fock.cc"">\n            <location file=""/media/nimashiri/DATA/vsprojects/ICSE23/vul_multi_tree_fock.cc"" line=""186"" column=""1""/>\n        </error>\n    </errors>\n</results>"
+987,cppcheck,diff,mxnet,0.17133593559265137,https://github.com/apache/mxnet/commit/4149f8b8752989fce5d80cc13f92d99774988b4f,infer_graph_attr_pass.cc,src/executor/infer_graph_attr_pass.cc,CWE-362,5,full_match,"        <error id=""nullPointer"" severity=""warning"" msg=""Possible null pointer dereference: igrad_node"" verbose=""Possible null pointer dereference: igrad_node"" cwe=""476"" file0=""/media/nimashiri/DATA/vsprojects/ICSE23/vul_infer_graph_attr_pass.cc"">\n            <location file=""/media/nimashiri/DATA/vsprojects/ICSE23/vul_infer_graph_attr_pass.cc"" line=""251"" column=""30"" info=""Null pointer dereference""/>\n            <location file=""/media/nimashiri/DATA/vsprojects/ICSE23/vul_infer_graph_attr_pass.cc"" line=""229"" column=""28"" info=""Assuming condition is false""/>\n            <location file=""/media/nimashiri/DATA/vsprojects/ICSE23/vul_infer_graph_attr_pass.cc"" line=""227"" column=""38"" info=""Assignment &apos;igrad_node=nullptr&apos;, assigned value is 0""/>\n            <symbol>igrad_node</symbol>\n        </error>"
+987,cppcheck,diff,mxnet,0.17133593559265137,https://github.com/apache/mxnet/commit/4149f8b8752989fce5d80cc13f92d99774988b4f,infer_graph_attr_pass.cc,src/executor/infer_graph_attr_pass.cc,CWE-362,5,full_match,"        <error id=""nullPointer"" severity=""warning"" msg=""Possible null pointer dereference: igrad_node"" verbose=""Possible null pointer dereference: igrad_node"" cwe=""476"" file0=""/media/nimashiri/DATA/vsprojects/ICSE23/vul_infer_graph_attr_pass.cc"">\n            <location file=""/media/nimashiri/DATA/vsprojects/ICSE23/vul_infer_graph_attr_pass.cc"" line=""251"" column=""30"" info=""Null pointer dereference""/>\n            <location file=""/media/nimashiri/DATA/vsprojects/ICSE23/vul_infer_graph_attr_pass.cc"" line=""229"" column=""28"" info=""Assuming condition is false""/>\n            <location file=""/media/nimashiri/DATA/vsprojects/ICSE23/vul_infer_graph_attr_pass.cc"" line=""227"" column=""38"" info=""Assignment &apos;igrad_node=nullptr&apos;, assigned value is 0""/>\n            <symbol>igrad_node</symbol>\n        </error>"
+987,cppcheck,diff,mxnet,0.17133593559265137,https://github.com/apache/mxnet/commit/4149f8b8752989fce5d80cc13f92d99774988b4f,infer_graph_attr_pass.cc,src/executor/infer_graph_attr_pass.cc,CWE-362,5,full_match,"        <error id=""nullPointer"" severity=""warning"" msg=""Possible null pointer dereference: igrad_node"" verbose=""Possible null pointer dereference: igrad_node"" cwe=""476"" file0=""/media/nimashiri/DATA/vsprojects/ICSE23/vul_infer_graph_attr_pass.cc"">\n            <location file=""/media/nimashiri/DATA/vsprojects/ICSE23/vul_infer_graph_attr_pass.cc"" line=""251"" column=""30"" info=""Null pointer dereference""/>\n            <location file=""/media/nimashiri/DATA/vsprojects/ICSE23/vul_infer_graph_attr_pass.cc"" line=""229"" column=""28"" info=""Assuming condition is false""/>\n            <location file=""/media/nimashiri/DATA/vsprojects/ICSE23/vul_infer_graph_attr_pass.cc"" line=""227"" column=""38"" info=""Assignment &apos;igrad_node=nullptr&apos;, assigned value is 0""/>\n            <symbol>igrad_node</symbol>\n        </error>"
+987,cppcheck,diff,mxnet,0.17133593559265137,https://github.com/apache/mxnet/commit/4149f8b8752989fce5d80cc13f92d99774988b4f,infer_graph_attr_pass.cc,src/executor/infer_graph_attr_pass.cc,CWE-362,5,full_match,"        <error id=""nullPointer"" severity=""warning"" msg=""Possible null pointer dereference: igrad_node"" verbose=""Possible null pointer dereference: igrad_node"" cwe=""476"" file0=""/media/nimashiri/DATA/vsprojects/ICSE23/vul_infer_graph_attr_pass.cc"">\n            <location file=""/media/nimashiri/DATA/vsprojects/ICSE23/vul_infer_graph_attr_pass.cc"" line=""542"" column=""30"" info=""Null pointer dereference""/>\n            <location file=""/media/nimashiri/DATA/vsprojects/ICSE23/vul_infer_graph_attr_pass.cc"" line=""520"" column=""28"" info=""Assuming condition is false""/>\n            <location file=""/media/nimashiri/DATA/vsprojects/ICSE23/vul_infer_graph_attr_pass.cc"" line=""518"" column=""38"" info=""Assignment &apos;igrad_node=nullptr&apos;, assigned value is 0""/>\n            <symbol>igrad_node</symbol>\n        </error>\n    </errors>\n</results>"
+987,cppcheck,diff,mxnet,0.17133593559265137,https://github.com/apache/mxnet/commit/4149f8b8752989fce5d80cc13f92d99774988b4f,infer_graph_attr_pass.cc,src/executor/infer_graph_attr_pass.cc,CWE-362,5,full_match,"        <error id=""nullPointer"" severity=""warning"" msg=""Possible null pointer dereference: igrad_node"" verbose=""Possible null pointer dereference: igrad_node"" cwe=""476"" file0=""/media/nimashiri/DATA/vsprojects/ICSE23/vul_infer_graph_attr_pass.cc"">\n            <location file=""/media/nimashiri/DATA/vsprojects/ICSE23/vul_infer_graph_attr_pass.cc"" line=""542"" column=""30"" info=""Null pointer dereference""/>\n            <location file=""/media/nimashiri/DATA/vsprojects/ICSE23/vul_infer_graph_attr_pass.cc"" line=""520"" column=""28"" info=""Assuming condition is false""/>\n            <location file=""/media/nimashiri/DATA/vsprojects/ICSE23/vul_infer_graph_attr_pass.cc"" line=""518"" column=""38"" info=""Assignment &apos;igrad_node=nullptr&apos;, assigned value is 0""/>\n            <symbol>igrad_node</symbol>\n        </error>\n    </errors>\n</results>"
+998,cppcheck,diff,mxnet,0.024325847625732422,https://github.com/apache/mxnet/commit/5f32f32e8c7ce50f20eae1438bf970eba6830578,naive_engine.cc,src/engine/naive_engine.cc,segfault,1,full_match,"<results version=""2"">\n    <cppcheck version=""2.7""/>\n    <errors>\nChecking /media/nimashiri/DATA/vsprojects/ICSE23/vul_naive_engine.cc ...\n        <error id=""uninitMemberVar"" severity=""warning"" msg=""Member variable &apos;NaiveEngine::req_completed_&apos; is not initialized in the constructor."" verbose=""Member variable &apos;NaiveEngine::req_completed_&apos; is not initialized in the constructor."" cwe=""398"" file0=""/media/nimashiri/DATA/vsprojects/ICSE23/vul_naive_engine.cc"">\n            <location file=""/media/nimashiri/DATA/vsprojects/ICSE23/vul_naive_engine.cc"" line=""64"" column=""3""/>\n            <symbol>NaiveEngine::req_completed_</symbol>\n        </error>\nChecking /media/nimashiri/DATA/vsprojects/ICSE23/vul_naive_engine.cc: MXNET_USE_CUDA...\n    </errors>\n</results>"
+1011,cppcheck,diff,mxnet,0.01137399673461914,https://github.com/apache/mxnet/commit/1eef07071a6b03e72e8e94c6d6e2c504f5ee8e23,indexing_op.cc,src/operator/tensor/indexing_op.cc,CWE-125,1,full_match,"<results version=""2"">\n    <cppcheck version=""2.7""/>\n    <errors>\nChecking /media/nimashiri/DATA/vsprojects/ICSE23/vul_indexing_op.cc ...\n        <error id=""unknownMacro"" severity=""error"" msg=""There is an unknown macro here somewhere. Configuration is required. If MSHADOW_TYPE_SWITCH is a macro then please configure it."" verbose=""There is an unknown macro here somewhere. Configuration is required. If MSHADOW_TYPE_SWITCH is a macro then please configure it."" file0=""/media/nimashiri/DATA/vsprojects/ICSE23/vul_indexing_op.cc"">\n            <location file=""/media/nimashiri/DATA/vsprojects/ICSE23/vul_indexing_op.cc"" line=""52"" column=""3""/>\n        </error>\n    </errors>\n</results>"
+1053,cppcheck,diff,pytorch,0.008257389068603516,https://github.com/pytorch/pytorch/commit/8269c4f3d30ad950a873d900f7de0880cdd38878,pthreadpool_impl.cc,caffe2/utils/threadpool/pthreadpool_impl.cc,CWE-476,1,full_match,"<results version=""2"">\n    <cppcheck version=""2.7""/>\n    <errors>\nChecking /media/nimashiri/DATA/vsprojects/ICSE23/vul_pthreadpool_impl.cc ...\n        <error id=""localMutex"" severity=""warning"" msg=""The lock is ineffective because the mutex is locked at the same scope as the mutex itself."" verbose=""The lock is ineffective because the mutex is locked at the same scope as the mutex itself."" cwe=""667"" file0=""/media/nimashiri/DATA/vsprojects/ICSE23/vul_pthreadpool_impl.cc"">\n            <location file=""/media/nimashiri/DATA/vsprojects/ICSE23/vul_pthreadpool_impl.cc"" line=""36"" column=""31""/>\n        </error>\n    </errors>\n</results>"
+1086,cppcheck,diff,pytorch,0.010036706924438477,https://github.com/pytorch/pytorch/commit/1597fc594d36a18d1d4aee16d09ea49ae7065610,VolumetricFullDilatedConvolution.c,aten/src/THNN/generic/VolumetricFullDilatedConvolution.c,CWE-190,1,full_match,"<results version=""2"">\n    <cppcheck version=""2.7""/>\n    <errors>\nChecking /media/nimashiri/DATA/vsprojects/ICSE23/vul_VolumetricFullDilatedConvolution.c ...\nChecking /media/nimashiri/DATA/vsprojects/ICSE23/vul_VolumetricFullDilatedConvolution.c: TH_GENERIC_FILE...\n        <error id=""unknownMacro"" severity=""error"" msg=""There is an unknown macro here somewhere. Configuration is required. If THNN_ is a macro then please configure it."" verbose=""There is an unknown macro here somewhere. Configuration is required. If THNN_ is a macro then please configure it."" file0=""/media/nimashiri/DATA/vsprojects/ICSE23/vul_VolumetricFullDilatedConvolution.c"">\n            <location file=""/media/nimashiri/DATA/vsprojects/ICSE23/vul_VolumetricFullDilatedConvolution.c"" line=""5"" column=""13""/>\n        </error>\n    </errors>\n</results>"
